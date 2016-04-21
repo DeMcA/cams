@@ -21,11 +21,10 @@ class Gear(object):
         self.colour = colour
         self.rating = rating
         self.name = '{} {}'.format(self.model, self.number)
-        self.width = float(self.size_u) - float(self.size_l)
+        self.cam_range = float(self.size_u) - float(self.size_l)
 
     def plot(self):
         pass
-
 
 
 def read_file(infile):
@@ -54,7 +53,7 @@ def plot_data(equipment, cupboard=None, sort_by=0):
     equipment:  dictionary of Gear instances
     cupboard:   list of keys to select from equipment
     sort_by:    0 -> name
-                1 -> width
+                1 -> cam_range
                 2 -> size_l (lowest possible size)
                 3 -> colour
     '''
@@ -65,15 +64,15 @@ def plot_data(equipment, cupboard=None, sort_by=0):
         cupboard = equipment
     for e in cupboard:
         data.append([equipment[e].name,
-                     equipment[e].width,
+                     equipment[e].cam_range,
                      float(equipment[e].size_l),
                      equipment[e].colour,
                      ])
     data = sorted(data, key=itemgetter(sort_by))
-    names, widths, lefts, colours = zip(*data)
+    names, cam_ranges, lefts, colours = zip(*data)
     # An alternative way to achieve sorting might be numpy arrays?
     fig = plt.figure(1)
-    plt.barh(range(len(names)), widths, left=lefts, color=colours,
+    plt.barh(range(len(names)), cam_ranges, left=lefts, color=colours,
              height=0.8, align='center')
     plt.yticks(range(len(names)), names)
     plt.xlabel('Size (mm)')
@@ -90,7 +89,7 @@ my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5'
             #, 'Totem 1.25', 'Dragon 2', 'Helium 1.5'
             ]
 my_stuff = [u'Dragon 1', u'4CU 1', u'4CU 2']
-equipment = read_file('cam-sizes.csv')
+equipment = read_file('cam_sizes.csv')
 
 if __name__ == '__main__':
     #plt.show(plot_data(equipment)) # To plot all data

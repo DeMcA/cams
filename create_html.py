@@ -16,5 +16,3 @@ with open(INFILE, 'r') as f:
             print("<br> " + model + " <br>")
         print('<input type="checkbox", name="check" value="{}"> {}'.format(name, number))
         prev_model = model
-
-
