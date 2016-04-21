@@ -1,0 +1,25 @@
+<html>
+
+  <head>
+    <title>Cams</title>
+  </head>
+
+  <body>
+    <img src="{{ url_for('chart', selected=selected)}}">
+        <form method="post">
+            selected: {{ selected }}
+            <br><br>
+            Dragon
+            <input type="checkbox" name="check" value="Dragon 1"> 1
+            <input type="checkbox" name="check" value="Dragon 2"> 2
+            <br>
+            4CU
+            <input type="checkbox" name="check" value="4CU 1"> 1
+            <input type="checkbox" name="check" value="4CU 2"> 2
+            <br>
+            <input type="submit">
+        </form>
+        
+   </body>
+
+</html>
