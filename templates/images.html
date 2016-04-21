@@ -5,21 +5,80 @@
   </head>
 
   <body>
-    <img src="{{ url_for('chart', selected=selected)}}">
-        <form method="post">
-            selected: {{ selected }}
-            <br><br>
-            Dragon
-            <input type="checkbox" name="check" value="Dragon 1"> 1
-            <input type="checkbox" name="check" value="Dragon 2"> 2
-            <br>
-            4CU
-            <input type="checkbox" name="check" value="4CU 1"> 1
-            <input type="checkbox" name="check" value="4CU 2"> 2
-            <br>
-            <input type="submit">
-        </form>
-        
+    <div class=matplotlib>
+        <img src="{{ url_for('chart', selected=selected)}}">
+    </div>
+    <form method="post">
+        selected: {{ selected }}
+        <br><br>
+
+        <script language="JavaScript">
+        function toggle(source) {
+            checkboxes = document.getElementsByName('check');
+            for (var i=0, n=checkboxes.length; i<n; i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+        </script>
+
+        <input type="checkbox" onClick="toggle(this)" /> Toggle All<br/>
+
+        <br> Dragon <br>
+        <input type="checkbox", name="check" value="Dragon 0"> 0
+        <input type="checkbox", name="check" value="Dragon 0"> 0
+        <input type="checkbox", name="check" value="Dragon 1"> 1
+        <input type="checkbox", name="check" value="Dragon 2"> 2
+        <input type="checkbox", name="check" value="Dragon 3"> 3
+        <input type="checkbox", name="check" value="Dragon 4"> 4
+        <input type="checkbox", name="check" value="Dragon 5"> 5
+        <input type="checkbox", name="check" value="Dragon 6"> 6
+        <br> 4CU <br>
+        <input type="checkbox", name="check" value="4CU 0"> 0
+        <input type="checkbox", name="check" value="4CU 0.5"> 0.5
+        <input type="checkbox", name="check" value="4CU 1"> 1
+        <input type="checkbox", name="check" value="4CU 1.25"> 1.25
+        <input type="checkbox", name="check" value="4CU 1.5"> 1.5
+        <input type="checkbox", name="check" value="4CU 1.75"> 1.75
+        <input type="checkbox", name="check" value="4CU 2"> 2
+        <input type="checkbox", name="check" value="4CU 2.5"> 2.5
+        <input type="checkbox", name="check" value="4CU 3"> 3
+        <input type="checkbox", name="check" value="4CU 3.5"> 3.5
+        <input type="checkbox", name="check" value="4CU 4"> 4
+        <br> Helium <br>
+        <input type="checkbox", name="check" value="Helium 0"> 0
+        <input type="checkbox", name="check" value="Helium 0.5"> 0.5
+        <input type="checkbox", name="check" value="Helium 1"> 1
+        <input type="checkbox", name="check" value="Helium 1.5"> 1.5
+        <input type="checkbox", name="check" value="Helium 2"> 2
+        <input type="checkbox", name="check" value="Helium 2.5"> 2.5
+        <input type="checkbox", name="check" value="Helium 3"> 3
+        <input type="checkbox", name="check" value="Helium 3.5"> 3.5
+        <input type="checkbox", name="check" value="Helium 4"> 4
+        <br> Zero <br>
+        <input type="checkbox", name="check" value="Zero 1"> 1
+        <input type="checkbox", name="check" value="Zero 2"> 2
+        <input type="checkbox", name="check" value="Zero 3"> 3
+        <input type="checkbox", name="check" value="Zero 4"> 4
+        <input type="checkbox", name="check" value="Zero 5"> 5
+        <input type="checkbox", name="check" value="Zero 6"> 6
+        <br> Totem <br>
+        <input type="checkbox", name="check" value="Totem 0.65"> 0.65
+        <input type="checkbox", name="check" value="Totem 0.8"> 0.8
+        <input type="checkbox", name="check" value="Totem 1"> 1
+        <input type="checkbox", name="check" value="Totem 1.25"> 1.25
+        <input type="checkbox", name="check" value="Totem 1.5"> 1.5
+        <br> X4 <br>
+        <input type="checkbox", name="check" value="X4 0.1"> 0.1
+        <input type="checkbox", name="check" value="X4 0.2"> 0.2
+        <input type="checkbox", name="check" value="X4 0.3"> 0.3
+        <input type="checkbox", name="check" value="X4 0.4"> 0.4
+        <input type="checkbox", name="check" value="X4 0.5"> 0.5
+        <input type="checkbox", name="check" value="X4 0.75"> 0.75
+
+        <br>
+        <input type="submit">
+    </form>
+    
    </body>
 
 </html>

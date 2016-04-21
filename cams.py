@@ -78,6 +78,7 @@ def plot_data(equipment, cupboard=None, sort_by=0):
     plt.yticks(range(len(names)), names)
     plt.xlabel('Size (mm)')
     plt.title('Cam Size Chart')
+    plt.close(fig)
     return fig
 
 #cam1 = Gear(name="dragon 2", colour="green", size_l=22, size_u=44)
