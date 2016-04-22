@@ -1,9 +1,10 @@
 #!/usr/local/env python
 # -*- coding: utf-8 -*-
 
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import pylab
 #import numpy as np
 import csv
 from operator import itemgetter
@@ -69,13 +70,40 @@ def plot_data(equipment, cupboard=None, sort_by=2):
     data = sorted(data, key=itemgetter(sort_by))
     names, cam_ranges, lefts, colours = zip(*data)
     # An alternative way to achieve sorting might be numpy arrays?
-    fig = plt.figure(1)
-    plt.barh(range(len(names)), cam_ranges, left=lefts, color=colours,
-             height=0.8, align='center')
-    plt.yticks(range(len(names)), names)
+    #fig, ax = plt.subplots()
+    fig = plt.figure()
+    r = fig.canvas.get_renderer()
+    #max_name = max([len(i) for i in names])
+    #t = plt.text(0.5, 0.5, max_name)
+    #bb = t.get_window_extent(renderer=r)
+    #width = bb.width
+    #fig.subplots_adjust(top=0.5)
+    ax = fig.add_subplot(111)
+    chart = ax.barh(range(len(names)), cam_ranges, left=lefts, color=colours,
+             height = 0.8, align='center')
+    fig.set_size_inches(10, 0.5 * len(names))
+    ax.yaxis.set_visible(False)
+    #plt.yticks(range(len(names)), names)
+    #plt.axis('image')
     plt.xlabel('Size (mm)')
+    #fig.tight_layout()
+    #plt.subplots_adjust(right=0.9)
     plt.title('Cam Size Chart')
-    plt.close(fig)
+    bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
+    axes_size = bbox.width * fig.dpi
+    max_label_width = 0
+    for i,j in enumerate(chart):
+        label_x = j.get_width()+j.get_x()+1
+        t = plt.text(label_x, j.get_y()+j.get_height()/2, names[i], verticalalignment='center')
+        w = t.get_window_extent(renderer=r).width
+        if w > max_label_width:
+            max_label_width = w
+    #print 'max_label: {}, axes_size: {}, max_label_width: {}'.format("pass", axes_size, max_label_width)
+    plt.xlim(xmax=plt.xlim()[1]+(axes_size/max_label_width)+2)
+    plt.ylim(ymin=-1, ymax=len(names))
+    #plt.autoscale(True)
+    if __name__ != '__main__':
+        plt.close(fig)
     return fig
 
 
@@ -85,4 +113,4 @@ my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5'
 equipment = read_file('cam_sizes.csv')
 
 if __name__ == '__main__':
-    plt.show(plot_data(equipment, my_stuff, sort_by=2))
+    plt.show(plot_data(equipment, cupboard=my_stuff, sort_by=2))
