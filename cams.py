@@ -8,9 +8,10 @@ import matplotlib.pyplot as plt
 import csv
 from operator import itemgetter
 
+
 class Gear(object):
     '''parent class for data and methods associated with a piece of gear'''
-    def __init__(self, make, model, number, size_l=None, size_u=None,
+    def __init__(self, make, model, number, size_l, size_u,
                  rating=None, weight=None, colour=None):
         self.make = make
         self.model = model
@@ -23,8 +24,9 @@ class Gear(object):
         self.name = '{} {}'.format(self.model, self.number)
         self.cam_range = float(self.size_u) - float(self.size_l)
 
-    def plot(self):
-        pass
+    def graph_data(self):
+        ''' returns the data required for each entry in a plot '''
+        return [self.name, self.cam_range, float(self.size_l), self.colour]
 
 
 def read_file(infile):
@@ -63,11 +65,7 @@ def plot_data(equipment, cupboard=None, sort_by=2):
     if cupboard is None:
         cupboard = equipment
     for e in cupboard:
-        data.append([equipment[e].name,
-                     equipment[e].cam_range,
-                     float(equipment[e].size_l),
-                     equipment[e].colour,
-                     ])
+        data.append(equipment[e].graph_data())
     data = sorted(data, key=itemgetter(sort_by))
     names, cam_ranges, lefts, colours = zip(*data)
     # An alternative way to achieve sorting might be numpy arrays?
@@ -80,18 +78,11 @@ def plot_data(equipment, cupboard=None, sort_by=2):
     plt.close(fig)
     return fig
 
-#cam1 = Gear(name="dragon 2", colour="green", size_l=22, size_u=44)
-#cam2 = Gear(name="dragon 5", colour="blue", size_l=50, size_u=85)
-#equipment = [cam1, cam2]
 
 my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5',
-            '4CU 4', '4CU 1', 'X4 0.4'
-            #, 'Totem 1.25', 'Dragon 2', 'Helium 1.5'
-            ]
+            '4CU 4', '4CU 1', 'X4 0.4']
+
 equipment = read_file('cam_sizes.csv')
 
 if __name__ == '__main__':
-    #plt.show(plot_data(equipment)) # To plot all data
-
-    plt.show(plot_data(equipment, my_stuff, sort_by=0))
-    # Plot my gear and order by size
+    plt.show(plot_data(equipment, my_stuff, sort_by=2))
