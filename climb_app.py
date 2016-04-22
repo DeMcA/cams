@@ -24,9 +24,11 @@ def chart(selected=None):
     #else:
     #results = selected.split(",")
     results = ast.literal_eval(selected)
+    order_by = 2
     if len(results) == 0:
         results = None
-    fig = cams.plot_data(cams.equipment, results)
+        order_by = 0
+    fig = cams.plot_data(cams.equipment, results, order_by)
     img = StringIO.StringIO()
     #img.flush()
     fig.savefig(img, format='png')

@@ -88,7 +88,6 @@ my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5'
             '4CU 4', '4CU 1', 'X4 0.4'
             #, 'Totem 1.25', 'Dragon 2', 'Helium 1.5'
             ]
-my_stuff = [u'Dragon 1', u'4CU 1', u'4CU 2']
 equipment = read_file('cam_sizes.csv')
 
 if __name__ == '__main__':
