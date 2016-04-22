@@ -46,7 +46,7 @@ def read_file(infile):
     return equipment
 
 
-def plot_data(equipment, cupboard=None, sort_by=0):
+def plot_data(equipment, cupboard=None, sort_by=2):
     '''
     Function to plot bars for a subset of all available Gear instances
 
