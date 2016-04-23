@@ -81,7 +81,7 @@ def plot_data(equipment, cupboard=None, sort_by=2):
     ax = fig.add_subplot(111)
     chart = ax.barh(range(len(names)), cam_ranges, left=lefts, color=colours,
              height = 0.8, align='center')
-    fig.set_size_inches(10, 0.5 * len(names))
+    fig.set_size_inches(10, 0.3 * len(names))
     ax.yaxis.set_visible(False)
     #plt.yticks(range(len(names)), names)
     #plt.axis('image')

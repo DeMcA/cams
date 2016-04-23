@@ -31,7 +31,7 @@ def chart(selected=None):
     fig = cams.plot_data(cams.equipment, results, order_by)
     img = StringIO.StringIO()
     #img.flush()
-    fig.savefig(img, format='png')
+    fig.savefig(img, format='png', bbox_inches='tight', pad_inches=0.1)
     img.seek(0)
     #im = Image.open(img)
     return send_file(img, mimetype='image/png')
