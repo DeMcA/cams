@@ -87,7 +87,7 @@ def write_html(reader, pre_checked=MY_STUFF, outfile=OUTFILE):
         print('        <input type="checkbox", name="check_{3}" value="{0}" {1}> {2}'\
               .format(name, checked, number, model), file=f)
         prev_model = model
-    print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> Alll'\
+    print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> All'\
             .format(prev_model), file=f)
     print(html_bottom, file=f)
 
