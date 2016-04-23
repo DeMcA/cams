@@ -9,70 +9,119 @@
         <img src="{{ url_for('chart', selected=selected)}}">
     </div>
     <form method="post">
-        <br><br>
 
-        <script language="JavaScript">
-        function toggle(source) {
-            checkboxes = document.getElementsByName('check');
-            for (var i=0, n=checkboxes.length; i<n; i++) {
-                checkboxes[i].checked = source.checked;
+
+    <br> Dragon <br>
+            <script language="JavaScript">
+            function toggle_Dragon(source) {
+                checkboxes_Dragon = document.getElementsByName('check_Dragon');
+                for (var i=0, n=checkboxes_Dragon.length; i<n; i++) {
+                    checkboxes_Dragon[i].checked = source.checked;
+                }
             }
-        }
-        </script>
-
-        <input type="checkbox" onClick="toggle(this)" /> Toggle All<br/>
+            </script>
     
-        <br> Dragon <br>
-        <input type="checkbox", name="check" value="Dragon 00" > 00
-        <input type="checkbox", name="check" value="Dragon 0" > 0
-        <input type="checkbox", name="check" value="Dragon 1" > 1
-        <input type="checkbox", name="check" value="Dragon 2" > 2
-        <input type="checkbox", name="check" value="Dragon 3" > 3
-        <input type="checkbox", name="check" value="Dragon 4" > 4
-        <input type="checkbox", name="check" value="Dragon 5" checked="checked"> 5
-        <input type="checkbox", name="check" value="Dragon 6" > 6
-        <br> 4CU <br>
-        <input type="checkbox", name="check" value="4CU 0" > 0
-        <input type="checkbox", name="check" value="4CU 0.5" > 0.5
-        <input type="checkbox", name="check" value="4CU 1" checked="checked"> 1
-        <input type="checkbox", name="check" value="4CU 1.25" > 1.25
-        <input type="checkbox", name="check" value="4CU 1.5" > 1.5
-        <input type="checkbox", name="check" value="4CU 1.75" > 1.75
-        <input type="checkbox", name="check" value="4CU 2" > 2
-        <input type="checkbox", name="check" value="4CU 2.5" > 2.5
-        <input type="checkbox", name="check" value="4CU 3" > 3
-        <input type="checkbox", name="check" value="4CU 3.5" > 3.5
-        <input type="checkbox", name="check" value="4CU 4" checked="checked"> 4
-        <br> Helium <br>
-        <input type="checkbox", name="check" value="Helium 0" > 0
-        <input type="checkbox", name="check" value="Helium 0.5" > 0.5
-        <input type="checkbox", name="check" value="Helium 1" > 1
-        <input type="checkbox", name="check" value="Helium 1.5" > 1.5
-        <input type="checkbox", name="check" value="Helium 2" checked="checked"> 2
-        <input type="checkbox", name="check" value="Helium 2.5" checked="checked"> 2.5
-        <input type="checkbox", name="check" value="Helium 3" checked="checked"> 3
-        <input type="checkbox", name="check" value="Helium 3.5" > 3.5
-        <input type="checkbox", name="check" value="Helium 4" > 4
-        <br> Zero <br>
-        <input type="checkbox", name="check" value="Zero 1" > 1
-        <input type="checkbox", name="check" value="Zero 2" > 2
-        <input type="checkbox", name="check" value="Zero 3" > 3
-        <input type="checkbox", name="check" value="Zero 4" > 4
-        <input type="checkbox", name="check" value="Zero 5" checked="checked"> 5
-        <input type="checkbox", name="check" value="Zero 6" checked="checked"> 6
-        <br> Totem <br>
-        <input type="checkbox", name="check" value="Totem 0.65" > 0.65
-        <input type="checkbox", name="check" value="Totem 0.8" > 0.8
-        <input type="checkbox", name="check" value="Totem 1" > 1
-        <input type="checkbox", name="check" value="Totem 1.25" > 1.25
-        <input type="checkbox", name="check" value="Totem 1.5" > 1.5
-        <br> X4 <br>
-        <input type="checkbox", name="check" value="X4 0.1" > 0.1
-        <input type="checkbox", name="check" value="X4 0.2" > 0.2
-        <input type="checkbox", name="check" value="X4 0.3" > 0.3
-        <input type="checkbox", name="check" value="X4 0.4" checked="checked"> 0.4
-        <input type="checkbox", name="check" value="X4 0.5" > 0.5
-        <input type="checkbox", name="check" value="X4 0.75" > 0.75
+        <input type="checkbox", name="check_Dragon" value="Dragon 00" > 00
+        <input type="checkbox", name="check_Dragon" value="Dragon 0" > 0
+        <input type="checkbox", name="check_Dragon" value="Dragon 1" > 1
+        <input type="checkbox", name="check_Dragon" value="Dragon 2" > 2
+        <input type="checkbox", name="check_Dragon" value="Dragon 3" > 3
+        <input type="checkbox", name="check_Dragon" value="Dragon 4" > 4
+        <input type="checkbox", name="check_Dragon" value="Dragon 5" checked="checked"> 5
+        <input type="checkbox", name="check_Dragon" value="Dragon 6" > 6
+        <input type="checkbox" onClick="toggle_Dragon(this)", name="all" /> All <br>
+    <br> 4CU <br>
+            <script language="JavaScript">
+            function toggle_4CU(source) {
+                checkboxes_4CU = document.getElementsByName('check_4CU');
+                for (var i=0, n=checkboxes_4CU.length; i<n; i++) {
+                    checkboxes_4CU[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_4CU" value="4CU 0" > 0
+        <input type="checkbox", name="check_4CU" value="4CU 0.5" > 0.5
+        <input type="checkbox", name="check_4CU" value="4CU 1" checked="checked"> 1
+        <input type="checkbox", name="check_4CU" value="4CU 1.25" > 1.25
+        <input type="checkbox", name="check_4CU" value="4CU 1.5" > 1.5
+        <input type="checkbox", name="check_4CU" value="4CU 1.75" > 1.75
+        <input type="checkbox", name="check_4CU" value="4CU 2" > 2
+        <input type="checkbox", name="check_4CU" value="4CU 2.5" > 2.5
+        <input type="checkbox", name="check_4CU" value="4CU 3" > 3
+        <input type="checkbox", name="check_4CU" value="4CU 3.5" > 3.5
+        <input type="checkbox", name="check_4CU" value="4CU 4" checked="checked"> 4
+        <input type="checkbox" onClick="toggle_4CU(this)", name="all" /> All <br>
+    <br> Helium <br>
+            <script language="JavaScript">
+            function toggle_Helium(source) {
+                checkboxes_Helium = document.getElementsByName('check_Helium');
+                for (var i=0, n=checkboxes_Helium.length; i<n; i++) {
+                    checkboxes_Helium[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Helium" value="Helium 0" > 0
+        <input type="checkbox", name="check_Helium" value="Helium 0.5" > 0.5
+        <input type="checkbox", name="check_Helium" value="Helium 1" > 1
+        <input type="checkbox", name="check_Helium" value="Helium 1.5" > 1.5
+        <input type="checkbox", name="check_Helium" value="Helium 2" checked="checked"> 2
+        <input type="checkbox", name="check_Helium" value="Helium 2.5" checked="checked"> 2.5
+        <input type="checkbox", name="check_Helium" value="Helium 3" checked="checked"> 3
+        <input type="checkbox", name="check_Helium" value="Helium 3.5" > 3.5
+        <input type="checkbox", name="check_Helium" value="Helium 4" > 4
+        <input type="checkbox" onClick="toggle_Helium(this)", name="all" /> All <br>
+    <br> Zero <br>
+            <script language="JavaScript">
+            function toggle_Zero(source) {
+                checkboxes_Zero = document.getElementsByName('check_Zero');
+                for (var i=0, n=checkboxes_Zero.length; i<n; i++) {
+                    checkboxes_Zero[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Zero" value="Zero 1" > 1
+        <input type="checkbox", name="check_Zero" value="Zero 2" > 2
+        <input type="checkbox", name="check_Zero" value="Zero 3" > 3
+        <input type="checkbox", name="check_Zero" value="Zero 4" > 4
+        <input type="checkbox", name="check_Zero" value="Zero 5" checked="checked"> 5
+        <input type="checkbox", name="check_Zero" value="Zero 6" checked="checked"> 6
+        <input type="checkbox" onClick="toggle_Zero(this)", name="all" /> All <br>
+    <br> Totem <br>
+            <script language="JavaScript">
+            function toggle_Totem(source) {
+                checkboxes_Totem = document.getElementsByName('check_Totem');
+                for (var i=0, n=checkboxes_Totem.length; i<n; i++) {
+                    checkboxes_Totem[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Totem" value="Totem 0.65" > 0.65
+        <input type="checkbox", name="check_Totem" value="Totem 0.8" > 0.8
+        <input type="checkbox", name="check_Totem" value="Totem 1" > 1
+        <input type="checkbox", name="check_Totem" value="Totem 1.25" > 1.25
+        <input type="checkbox", name="check_Totem" value="Totem 1.5" > 1.5
+        <input type="checkbox" onClick="toggle_Totem(this)", name="all" /> All <br>
+    <br> X4 <br>
+            <script language="JavaScript">
+            function toggle_X4(source) {
+                checkboxes_X4 = document.getElementsByName('check_X4');
+                for (var i=0, n=checkboxes_X4.length; i<n; i++) {
+                    checkboxes_X4[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_X4" value="X4 0.1" > 0.1
+        <input type="checkbox", name="check_X4" value="X4 0.2" > 0.2
+        <input type="checkbox", name="check_X4" value="X4 0.3" > 0.3
+        <input type="checkbox", name="check_X4" value="X4 0.4" checked="checked"> 0.4
+        <input type="checkbox", name="check_X4" value="X4 0.5" > 0.5
+        <input type="checkbox", name="check_X4" value="X4 0.75" > 0.75
+        <input type="checkbox" onClick="toggle_X4(this)", name="all" /> Alll
         <br>
         <input type="submit">
     </form>

@@ -1,0 +1,7 @@
+* style sheets
+* host on webserver
+* option to set sort type (line width, etc)
+* ability to display extra data (weight, rating etc.)
+* test suit?
+* get more data (scraping?)
+* extend to other gear?
