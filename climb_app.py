@@ -18,19 +18,26 @@ def images(name=None):
     selected = []
     for i in all_values:
         for j in i:
-            if j != 'on':
+            print j
+            if j not in  ['on', 'Model name', 'Min size']:
                 selected.append(j) # because nested comprehensions are bad
+    button = request.form['sort_by']
+    print selected
+    sort_by = 2
+    if button == 'Model name':
+        sort_by = 0
     #selected = ",".join(selected)
     #if len selected = 0:
-    return render_template('images.html', selected=selected)
+    return render_template('images.html', selected=selected, sort_by=sort_by)
 
 
-@app.route('/fig/<selected>')
-def chart(selected=None):
+@app.route('/fig/<selected>/')
+@app.route('/fig/<selected>/<int:sort_by>')
+def chart(selected=None, sort_by=None):
     #else:
     #results = selected.split(",")
     results = ast.literal_eval(selected)
-    order_by = 2
+    order_by = sort_by
     if len(results) == 0:
         results = None
         order_by = 0

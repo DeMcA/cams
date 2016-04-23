@@ -15,9 +15,14 @@ html_top = '''<html>
 
 <body>
     <div class=matplotlib>
-        <img src="{{ url_for('chart', selected=selected)}}">
+        <img src="{{ url_for('chart', selected=selected, sort_by=sort_by)}}">
     </div>
     <form method="post">
+
+    Sort by:
+    <input type="radio", name="sort_by" value="Min size" checked="check"> Min Size
+    <input type="radio", name="sort_by" value="Model name" > Model name
+    <br>
 
 '''
 #        <script language="JavaScript">
