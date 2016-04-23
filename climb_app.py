@@ -31,7 +31,7 @@ def images(name=None):
     return render_template('images.html', selected=selected, sort_by=sort_by)
 
 
-@app.route('/fig/<selected>/')
+#@app.route('/fig/<selected>/')
 @app.route('/fig/<selected>/<int:sort_by>')
 def chart(selected=None, sort_by=None):
     #else:
