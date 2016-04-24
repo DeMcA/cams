@@ -17,7 +17,9 @@ def images(name=None):
     for i in all_values:
         for j in i:
             if j not in  ['on', 'Model name', 'Min size']:
-                selected.append(j) # because nested comprehensions are bad
+                selected.append(j)
+                # Can use itertools.chain, nested list comprehension, but I
+                # probably shouldn't be reading this list in the first place.
     button = request.form.get('sort_by')
     sort_by = 2
     if button == 'Model name':
@@ -33,7 +35,8 @@ def chart(selected=None, sort_by=None):
     if len(results) == 0:
         results = None
         order_by = 0
-    fig = cams.plot_data(cams.equipment, results, order_by)
+    fig = cams.plot_data(cams.equipment(), results, order_by)
+    # pythonanywhere loads as module so just equipment from __main__ fails
     img = StringIO.StringIO()
     fig.savefig(img, format='png', bbox_inches='tight', pad_inches=0.1)
     img.seek(0)
@@ -41,5 +44,5 @@ def chart(selected=None, sort_by=None):
 
 
 if __name__ == '__main__':
-    equipment = cams.equipment
-    app.run()
+    equipment = cams.equipment()
+    app.run(host='0.0.0.0', debug=True)

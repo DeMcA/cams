@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import csv, os
 from operator import itemgetter
 
-this_dir = os.path.dirname(__file__)
 
 class Gear(object):
     '''parent class for data and methods associated with a piece of gear'''
@@ -110,7 +109,9 @@ def plot_data(equipment, cupboard=None, sort_by=2):
 my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5',
             '4CU 4', '4CU 1', 'X4 0.4']
 
-equipment = read_file(os.path.join(this_dir, 'cam_sizes.csv'))
+def equipment(infile='cam_sizes.csv'):
+    this_dir = os.path.dirname(__file__)
+    return read_file(os.path.join(this_dir, infile))
 
 if __name__ == '__main__':
     plt.show(plot_data(equipment, cupboard=my_stuff, sort_by=2))
