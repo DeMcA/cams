@@ -13,16 +13,13 @@ def main():
 @app.route('/images/', methods=['GET', 'POST'])
 @app.route('/images/<selected>')
 def images(name=None):
-    #    print selected
     all_values = request.form.listvalues()
     selected = []
     for i in all_values:
         for j in i:
-            print j
             if j not in  ['on', 'Model name', 'Min size']:
                 selected.append(j) # because nested comprehensions are bad
-    button = request.form['sort_by']
-    print selected
+    button = request.form.get('sort_by')
     sort_by = 2
     if button == 'Model name':
         sort_by = 0
@@ -41,7 +38,7 @@ def chart(selected=None, sort_by=None):
     if len(results) == 0:
         results = None
         order_by = 0
-    fig = cams.plot_data(equipment, results, order_by)
+    fig = cams.plot_data(cams.equipment, results, order_by)
     img = StringIO.StringIO()
     #img.flush()
     fig.savefig(img, format='png', bbox_inches='tight', pad_inches=0.1)
@@ -52,4 +49,4 @@ def chart(selected=None, sort_by=None):
 
 if __name__ == '__main__':
     equipment = cams.equipment
-    app.run(host='0.0.0.0', debug=False)
+    app.run()
