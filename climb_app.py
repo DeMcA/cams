@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return 'Text'
+    return render_template('index.html')
 
 @app.route('/images/', methods=['GET', 'POST'])
 @app.route('/images/<selected>')
