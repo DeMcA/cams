@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from fractions import Fraction
 import csv, os
 import cams
 
-INFILE = 'cam_sizes.csv'
+INFILE = 'outneedle.csv'
 OUTFILE = os.path.join('templates', 'images.html')
 MY_STUFF = cams.my_stuff # list of names that will be pre-checked
 
@@ -25,18 +26,7 @@ html_top = '''<html>
     <br>
 
 '''
-#        <script language="JavaScript">
-#        function toggle(source) {
-#            checkboxes = document.getElementsByName('all');
-#            for (var i=0, n=checkboxes.length; i<n; i++) {
-#                checkboxes[i].checked = source.checked;
-#            }
-#        }
-#        </script>
-#
-#        <input type="checkbox" onClick="toggle(this)" /> Toggle All<br/>
-#    '''
-#
+
 html_bottom = '''        <br>
         <input type="submit">
     </form>
@@ -46,8 +36,9 @@ html_bottom = '''        <br>
 </html>
 '''
 
-def make_toggle_html(model):
-    model_top =  '''    <br> {0} <br>
+def make_toggle_html(make, model):
+    pretty_model = model.replace('_', ' ')+'s'
+    model_top =  '''    <br> {2} {1} <br>
             <script language="JavaScript">
             function toggle_{0}(source) {{
                 checkboxes_{0} = document.getElementsByName('check_{0}');
@@ -56,7 +47,7 @@ def make_toggle_html(model):
                 }}
             }}
             </script>
-    '''.format(model)
+    '''.format(model, pretty_model, make)
     return model_top
 
 
@@ -71,16 +62,20 @@ def write_html(reader, pre_checked=MY_STUFF, outfile=OUTFILE):
     print(html_top, file=f)
     prev_model = None
     for row in reader:
+        make = row[0]
         model = row[1]
         number = row[2]
+        if '/' in number:
+            number = '{:0.3g}'.format(float(Fraction(number))) # '/' is problematic in html
         name = '{} {}'.format(model, number)
+        model = model.replace(' ', '_')
         if prev_model is None:
-            print(make_toggle_html(model), file=f)
+            print(make_toggle_html(make, model), file=f)
         elif model != prev_model:
             #print(model, prev_model)
             print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> All <br>'\
                   .format(prev_model), file=f)
-            print(make_toggle_html(model), file=f)
+            print(make_toggle_html(make, model), file=f)
         checked = ''
         if name in pre_checked:
             checked = 'checked="checked"'

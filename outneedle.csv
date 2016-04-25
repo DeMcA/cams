@@ -1,0 +1,115 @@
+make,model,number,colour,size_l,size_u,head_width,strength,weight
+Totem,Totem Basic,0.5,blue,11.2,17.4,33,5,56
+Totem,Totem Basic,0.65,green,13.6,21.4,33,7,66
+Totem,Totem Basic,0.75,yellow,16.6,26.1,33,9,73
+Totem,Totem Basic,0.95,red,19.9,31.6,33,11,78
+Lowe,Ball Nut,1,Blue,3,6,15,8,29
+Lowe,Ball Nut,2,Red,4.5,9,19,8,37
+Lowe,Ball Nut,3,Gold,6,12,21,8,54
+Lowe,Ball Nut,4,Green,8,14,23,8,57
+Lowe,Ball Nut,5,Purple,10.5,18,24,8,73
+Metolius,Master Cam,00,grey,8.6,11.9,30,5 kN,62.4
+Metolius,Master Cam,0,purple,9.9,15,30,5 kN,65.2
+Metolius,Master Cam,1,blue,12.5,18,35,8 kN,68
+Metolius,Master Cam,2,yellow,15.7,22.6,35,10 kN,70.9
+Metolius,Master Cam,3,orange,18.8,26.4,40,10 kN,82.2
+Metolius,Master Cam,4,red,23.66,33.5,40,10 kN,90.7
+Metolius,Master Cam,5,black,27.7,39.6,45,10 kN,99.2
+Metolius,Master Cam,6,green,32.5,48,45,10 kN,110.6
+BD,Camalot C4,0.3,Blue,13.8,23.4,42,10,71
+BD,Camalot C4,0.4,Grey,15.5,26.7,42,10,82
+BD,Camalot C4,0.5,Purple,19.6,33.5,45,12,97
+BD,Camalot C4,0.75,Green,23.9,41.2,50,14,116
+BD,Camalot C4,1,Red,30.2,52.1,52,14,134
+BD,Camalot C4,2,Gold,37.2,64.9,56,14,158
+BD,Camalot C4,3,Blue,50.7,87.9,60,14,201
+BD,Camalot C4,4,Silver,66,114.7,70,14,278
+BD,Camalot C4,5,Purple,85.4,148.5,80,14,381
+BD,Camalot C4,6,Green,114.1,195,90,14,557
+Camp,Tricam,0.1255,White,10,15,16,4,26
+Camp,Tricam,0.25,Black,13.5,25,22,5,26
+Camp,Tricam,0.5,Pink,16,28,25,9,26
+Camp,Tricam,1,Red,20,30,27,9,35
+Camp,Tricam,1.5,Brown,26,38,28,14,50
+Camp,Tricam,2,Blue,29,41,28,14,55
+Camp,Tricam,2.5,blue,32,48,32,17,77
+Camp,Tricam,3,blue,38,54,33,17,90
+Camp,Tricam,3.5,Beige,41,60,39,17,117
+Camp,Tricam,4,Green,45,64,39,17,138
+Camp,Tricam,5,Orange,57,89,38,22,120
+Camp,Tricam,6,Yellow,73,105,49,18,200
+Camp,Tricam,7,Gold,92,140,65,16,264
+Omega Pacific,Link Cam,0.5,purple,13.5,35.0,46,8,95
+Omega Pacific,Link Cam,0.75,green,17.8,44.5,48.8,10,113
+Omega Pacific,Link Cam,1,red,21.1,53.3,55,14,176
+Omega Pacific,Link Cam,2,gold,25.4,64,55,14,207
+Wildcountry,Technical Friend,5,Red,84,136,87,14,346
+Wildcountry,Technical Friend,6,Green,116,194,120,14,533
+techROCK,Alien Evolution,1/3,black,8,14,30,5,46
+techROCK,Alien Evolution,3/8,blue,10,17,30,6,48
+techROCK,Alien Evolution,1/2,green,13,22,29,7,52
+techROCK,Alien Evolution,3/4,yellow,15,25,29,10,58
+techROCK,Alien Evolution,7/8,grey,17,30,30,10,59
+techROCK,Alien Evolution,1,red,20,33,30,10,61
+BD,Camalot C3,000,Grey,7.8,12.9,28,4,55
+BD,Camalot C3,00,Purple,9.0,13.7,28,6,57
+BD,Camalot C3,0,Green,10.7,15.8,28,7,59
+BD,Camalot C3,1,Red,12.0,18.8,29,10,62
+BD,Camalot C3,2,Yellow,14.2,22.6,29,10,66
+Wildcountry,New Friend,0.5,Purple,20.6,34.5,47,10,98
+Wildcountry,New Friend,0.75,Green,25.8,43.0,50,10,115
+Wildcountry,New Friend,1,Red,31.7,53.6,52,10,134
+Wildcountry,New Friend,2,Gold,41.5,69.3,57,10,159
+Wildcountry,New Friend,3,Blue,52.7,88.0,60,10,202
+Wildcountry,New Friend,4,Grey,66.8,112.1,75,10,283
+DMM,Dragon,00,Blue,13.6,22.5,39.1,9,75
+DMM,Dragon,0,Silver,16,26.7,40.1,12,85
+DMM,Dragon,1,Purple,20,33,40.2,14,97
+DMM,Dragon,2,Green,24,41,40.8,14,106
+DMM,Dragon,3,Red,29,50,42.2,14,119
+DMM,Dragon,4,Gold,38,64,51.2,14,148
+DMM,Dragon,5,Blue,50,85,55.4,14,195
+DMM,Dragon,6,Silver,68,114,66.1,14,276
+CCH,Alien,1/3,black,8,14,35.56,5,64
+CCH,Alien,3/8,blue,10,17,35.56,6,68
+CCH,Alien,1/2,green,13,22,33.02,7,70
+CCH,Alien,3/4,yellow,15,25,33.02,9,80
+CCH,Alien,7/8,grey,17,30,33.02,10,82
+CCH,Alien,1,red,20,33,33.02,10,84
+Totem,Totem,0.65,blue,13.8,22.5,30,8,75
+Totem,Totem,0.8,yellow,17,27.7,32,9,83
+Totem,Totem,1,purple,20.9,34.2,34,10,95
+Totem,Totem,1.25,green,25.7,42.3,37,13,109
+Totem,Totem,1.5,red,31.6,52.2,41,13,132.5
+DMM,4CU,0,Blue,13,19,42,14,75
+DMM,4CU,0.5,Red,17,24,42,14,80
+DMM,4CU,1,Gold,19,29,48,14,93
+DMM,4CU,1.25,Purple,21,33,48,14,96
+DMM,4CU,1.5,Silver,23,35,48,14,97
+DMM,4CU,1.75,Green,25,41,48,14,99
+DMM,4CU,2,Red,29,44,48,14,110
+DMM,4CU,2.5,Gold,33,55,53,14,123
+DMM,4CU,3,Purple,43,66,56,14,151
+DMM,4CU,3.5,Blue,51,82,65,14,185
+DMM,4CU,4,Silver,64,100,65,14,224
+BD,X4,0.1,Red,8.4,13.8,31,5,51
+BD,X4,0.2,Yellow,9.9,16.5,31,6,54
+BD,X4,0.3,Blue,12.4,21.2,34,8,75
+BD,X4,0.4,Grey,15.5,26.6,33,9,82
+BD,X4,0.5,Purple,19.8,33.7,34,9,91
+BD,X4,0.75,Green,24,41.2,39,9,112
+Wildcountry,Helium,0,Blue,14,22.54,42,11,87
+Wildcountry,Helium,0.5,Red,16.56,26.66,42,11,91
+Wildcountry,Helium,1,Gold,19.71,31.73,46,11,98
+Wildcountry,Helium,1.5,Silver,23.59,37.98,48,12,106
+Wildcountry,Helium,2,Red,28.41,45.73,50,12,111
+Wildcountry,Helium,2.5,Gold,34.4,55.39,53,12,131
+Wildcountry,Helium,3,Purple,41.9,67.47,53,12,145
+Wildcountry,Helium,3.5,Blue,51.34,82.65,60,12,178
+Wildcountry,Helium,4,Silver,63.25,101.83,60,12,221
+Wildcountry,Zero,1,Purple,5.5,7.8,,3,25
+Wildcountry,Zero,2,Green,7.0,9.8,,4,32
+Wildcountry,Zero,3,Silver,8.5,12.2,,6,44
+Wildcountry,Zero,4,Gold,10.3,16,,6,50
+Wildcountry,Zero,5,Blue,13.0,19.0,,9,66
+Wildcountry,Zero,6,Red,17.0,24.0,,9,70

@@ -1,10 +1,10 @@
 #!/usr/local/env python
 # -*- coding: utf-8 -*-
-
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 #import numpy as np
+from fractions import Fraction
 import csv, os
 from operator import itemgetter
 
@@ -40,8 +40,12 @@ def read_file(infile):
     with open(infile, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            name = '{} {}'.format(row['model'], row['number'])
-            equipment[name] = Gear(row ['make'], row['model'], row['number'],
+            number = row['number']
+            if '/' in number:
+                number = '{:0.3g}'.format(float(Fraction(number)))
+            # '/' is problematic in html
+            name = '{} {}'.format(row['model'], number)
+            equipment[name] = Gear(row ['make'], row['model'], number,
                                   size_l=row['size_l'],
                                   size_u=row['size_u'],
                                   colour=row['colour'])
@@ -109,7 +113,7 @@ def plot_data(equipment, cupboard=None, sort_by=2):
 my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5',
             '4CU 4', '4CU 1', 'X4 0.4']
 
-def equipment(infile='cam_sizes.csv'):
+def equipment(infile='outneedle.csv'):
     this_dir = os.path.dirname(__file__)
     return read_file(os.path.join(this_dir, infile))
 

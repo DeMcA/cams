@@ -1,7 +1,8 @@
+* labels shouldn't exceed plot area
+* remember toggle states (wtf-forms?)
+* better structure (ie. app folder)
+* make use of jinja over create_html.py
 * style sheets
-* host on webserver
-* option to set sort type (line width, etc)
 * ability to display extra data (weight, rating etc.)
 * test suit?
-* get more data (scraping?)
 * extend to other gear?
