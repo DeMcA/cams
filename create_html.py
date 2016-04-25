@@ -5,7 +5,7 @@ import csv, os
 import cams
 
 INFILE = 'outneedle.csv'
-OUTFILE = os.path.join('templates', 'images.html')
+OUTFILE = os.path.join('templates', 'cams.html')
 MY_STUFF = cams.my_stuff # list of names that will be pre-checked
 
 html_top = '''<html>

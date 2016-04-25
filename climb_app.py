@@ -9,8 +9,8 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-@app.route('/images/', methods=['GET', 'POST'])
-@app.route('/images/<selected>')
+@app.route('/cams/', methods=['GET', 'POST'])
+@app.route('/cams/<selected>')
 def images(name=None):
     all_values = request.form.listvalues()
     selected = []
