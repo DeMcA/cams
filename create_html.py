@@ -20,15 +20,27 @@ html_top = '''<html>
     </div>
     <form method="post">
 
+    <input type="submit", value="Plot Cams"><br><br>
     Sort by:
     <input type="radio", name="sort_by" value="size_l" checked="check"> Min Size
     <input type="radio", name="sort_by" value="model" > Model name
     <br>
 
+    <script language="JavaScript">
+    function toggle_all(source) {
+        checkboxes_all = document.getElementsByTagName('input');
+        for (var i=0, n=checkboxes_all.length; i<n; i++) {
+            if (checkboxes_all[i].type == 'checkbox'){
+                checkboxes_all[i].checked = source.checked;
+                }
+        }
+    }
+    </script>
+
+    <br> <input type="checkbox" onClick="toggle_all(this)", name="toggle" /> Everything <br>
 '''
 
 html_bottom = '''        <br>
-        <input type="submit">
     </form>
 
    </body>
@@ -79,7 +91,7 @@ def write_html(reader, pre_checked=MY_STUFF, outfile=OUTFILE):
         checked = ''
         if name in pre_checked:
             checked = 'checked="checked"'
-        print('        <input type="checkbox", name="check_{3}" value="{0}" {1}> {2}'\
+        print('        <input type="checkbox", name="check_{3}", value="{0}", class="check" {1}> {2}'\
               .format(name, checked, number, model), file=f)
         prev_model = model
     print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> All'\
