@@ -21,8 +21,8 @@ html_top = '''<html>
     <form method="post">
 
     Sort by:
-    <input type="radio", name="sort_by" value="Min size" checked="check"> Min Size
-    <input type="radio", name="sort_by" value="Model name" > Model name
+    <input type="radio", name="sort_by" value="size_l" checked="check"> Min Size
+    <input type="radio", name="sort_by" value="model" > Model name
     <br>
 
 '''

@@ -1,5 +1,4 @@
 * labels shouldn't exceed plot area
-* Possible to sort 'x 00' before 'x 0'?
 * remember toggle states (wtf-forms?)
 * better structure (ie. app folder)
 * use jinja instead of my create_html.py script

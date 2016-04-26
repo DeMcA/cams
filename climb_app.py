@@ -16,26 +16,22 @@ def images(name=None):
     selected = []
     for i in all_values:
         for j in i:
-            if j not in  ['on', 'Model name', 'Min size']:
+            if j not in  ['on', 'model', 'size_l']:
                 selected.append(j)
                 # Can use itertools.chain, nested list comprehension, but I
                 # probably shouldn't be reading this list in the first place.
-    button = request.form.get('sort_by')
-    sort_by = 2
-    if button == 'Model name':
-        sort_by = 0
-    return render_template('images.html', selected=selected, sort_by=sort_by)
+    sort_by = request.form.get('sort_by')
+    return render_template('cams.html', selected=selected, sort_by=sort_by)
 
 
 @app.route('/fig/<selected>/')
-@app.route('/fig/<selected>/<int:sort_by>')
+@app.route('/fig/<selected>/<sort_by>')
 def chart(selected=None, sort_by=None):
     results = ast.literal_eval(selected)
-    order_by = sort_by
     if len(results) == 0:
         results = None
-        order_by = 0
-    fig = cams.plot_data(cams.equipment(), results, order_by)
+        sort_by = 'model' # what's this doing?
+    fig = cams.plot_data(cams.equipment(), results, sort_by)
     # pythonanywhere loads as module so just equipment from __main__ fails
     img = StringIO.StringIO()
     fig.savefig(img, format='png', bbox_inches='tight', pad_inches=0.1)
