@@ -87,6 +87,8 @@ def plot_data(equipment, cupboard=None, sort_by='size_l'):
              height = 0.8, align='center')
     fig.set_size_inches(10, 0.3 * len(names))
     ax.yaxis.set_visible(False)
+    plt.grid(axis='x')
+    ax.set_axisbelow(True)
     #plt.yticks(range(len(names)), names)
     #plt.axis('image')
     plt.xlabel('Size (mm)')
