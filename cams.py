@@ -51,7 +51,7 @@ def read_file(infile):
     return equipment
 
 
-def plot_data(equipment, cupboard=None, sort_by='size_l'):
+def plot_data(equipment, cupboard=None, sort_by='size_l', units='imperial'):
     '''
     Function to plot bars for a subset of all available Gear instances
 
@@ -73,47 +73,56 @@ def plot_data(equipment, cupboard=None, sort_by='size_l'):
     if sort_by == 'model':
         data.sort(key=attrgetter('model'))
     names, cam_ranges, lefts, colours = zip(*data)
+    y_values = range(len(names))
+    fig = plt.figure()
+    plt.xlabel('Size (mm)')
+    if units == 'imperial':
+        cam_ranges = [x/25.4 for x in cam_ranges]
+        lefts = [x/25.4 for x in lefts]
+        plt.xlabel('Size (inches)')
 
     ### Now use pyplot with these data:
     #fig, ax = plt.subplots()
-    fig = plt.figure()
     #max_name = max([len(i) for i in names])
     #t = plt.text(0.5, 0.5, max_name)
     #bb = t.get_window_extent(renderer=r)
     #width = bb.width
     #fig.subplots_adjust(top=0.5)
     ax = fig.add_subplot(111)
-    chart = ax.barh(range(len(names)), cam_ranges, left=lefts, color=colours,
+    chart = ax.barh(y_values, cam_ranges, left=lefts, color=colours,
              height = 0.8, align='center')
     fig.set_size_inches(10, 0.3 * len(names))
     ax.yaxis.set_visible(False)
     plt.grid(axis='x')
     ax.set_axisbelow(True)
-    #plt.yticks(range(len(names)), names)
-    #plt.axis('image')
-    plt.xlabel('Size (mm)')
-    #fig.tight_layout()
     #plt.subplots_adjust(right=0.9)
     plt.title('Cam Size Chart')
+
+    #if __name__ != '__main__':
+    r = fig.canvas.get_renderer()
+    print r
+    bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
+    axes_size = bbox.width * fig.dpi
+    #print "xlim()",plt.xlim()
+    max_label_width = 0
+    max_bar_extent = 0
+    label_space = plt.xlim()[1]/30
     for i,j in enumerate(chart):
-        label_x = j.get_width()+j.get_x()+1
+        bar_extent = j.get_width()+j.get_x()
+        label_x = bar_extent + label_space
         t = plt.text(label_x, j.get_y()+j.get_height()/2, names[i], verticalalignment='center')
-    if __name__ != '__main__':
-        r = fig.canvas.get_renderer()
-        bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
-        axes_size = bbox.width * fig.dpi
-        max_label_width = 0
-        for i,j in enumerate(chart):
-            label_x = j.get_width()+j.get_x()+1
-            t = plt.text(label_x, j.get_y()+j.get_height()/2, names[i], verticalalignment='center')
-            w = t.get_window_extent(renderer=r).width
-            if w > max_label_width:
-                max_label_width = w
-        #print 'max_label: {}, axes_size: {}, max_label_width: {}'.format("pass", axes_size, max_label_width)
-        plt.xlim(xmax=plt.xlim()[1]+(axes_size/max_label_width)+2)
-        plt.ylim(ymin=-1, ymax=len(names))
-        #plt.autoscale(True)
-        #plt.close(fig)
+        w = t.get_window_extent(renderer=r).width
+        if w > max_label_width:
+            max_label_width = w
+            #print 'max_label: {}, axes_size: {}, max_label_width: {}, fig.dpi: {}'.format("pass", axes_size, max_label_width, fig.dpi)
+        if bar_extent > max_bar_extent:
+            max_bar_extent = bar_extent
+    scaled_label_width = (max_label_width/axes_size)*plt.xlim()[1]
+
+    plt.xlim(xmax=((max_bar_extent + scaled_label_width)+2*label_space))
+    plt.ylim(ymin=-1, ymax=len(names))
+    #plt.autoscale(True)
+    #plt.close(fig)
     return fig
 
 
