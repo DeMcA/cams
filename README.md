@@ -10,7 +10,8 @@ The range data, as currently available, is lifted from the [Needle Sports](http:
 
 This is mostly an exercise in learning how to create a webapp/write html, neither of which I've done before. 
 I've also been trying to properly complete my rack and, given all the new cams currently on the market and the resulting deals on old models, wanted to see what if I could pick up anything useful on the cheap.
-(I'd really like a totem 1.75 but can't justify spending £58 on a single cam.)
+Was dead happy to pick up a Dragon 5 for £35 at snow and rock the other day.
+(The pre-selected ones are what I have access to. I'd really like a totem 1.75 to fill in that big gap, but can't justify spending so much on a single cam.)
 
 ## Contributors
 

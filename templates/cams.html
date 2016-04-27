@@ -78,9 +78,20 @@
         <input type="checkbox", name="check_Master_Cam", value="Master Cam 4", class="check" > 4
         <input type="checkbox", name="check_Master_Cam", value="Master Cam 5", class="check" > 5
         <input type="checkbox", name="check_Master_Cam", value="Master Cam 6", class="check" > 6
-        <input type="checkbox", name="check_Master_Cam", value="Master Cam 7", class="check" > 7
-        <input type="checkbox", name="check_Master_Cam", value="Master Cam 8", class="check" > 8
         <input type="checkbox" onClick="toggle_Master_Cam(this)", name="all" /> All <br>
+    <br> Metolius Master Cam ULs <br>
+            <script language="JavaScript">
+            function toggle_Master_Cam_UL(source) {
+                checkboxes_Master_Cam_UL = document.getElementsByName('check_Master_Cam_UL');
+                for (var i=0, n=checkboxes_Master_Cam_UL.length; i<n; i++) {
+                    checkboxes_Master_Cam_UL[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Master_Cam_UL", value="Master Cam UL 7", class="check" > 7
+        <input type="checkbox", name="check_Master_Cam_UL", value="Master Cam UL 8", class="check" > 8
+        <input type="checkbox" onClick="toggle_Master_Cam_UL(this)", name="all" /> All <br>
     <br> BD Camalot C4s <br>
             <script language="JavaScript">
             function toggle_Camalot_C4(source) {
@@ -250,11 +261,13 @@
             }
             </script>
     
+        <input type="checkbox", name="check_Totem", value="Totem 0.5", class="check" > 0.5
         <input type="checkbox", name="check_Totem", value="Totem 0.65", class="check" > 0.65
         <input type="checkbox", name="check_Totem", value="Totem 0.8", class="check" > 0.8
         <input type="checkbox", name="check_Totem", value="Totem 1", class="check" > 1
         <input type="checkbox", name="check_Totem", value="Totem 1.25", class="check" > 1.25
         <input type="checkbox", name="check_Totem", value="Totem 1.5", class="check" > 1.5
+        <input type="checkbox", name="check_Totem", value="Totem 1.8", class="check" > 1.8
         <input type="checkbox" onClick="toggle_Totem(this)", name="all" /> All <br>
     <br> DMM 4CUs <br>
             <script language="JavaScript">
