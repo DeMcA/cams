@@ -1,6 +1,6 @@
 # Cams
 
-A webapp that allows the interactive creation of charts plotting the size range for rock climbing camming devices.
+A simple flask website/app that allows the interactive creation of charts plotting size ranges for rock climbing camming devices.
 [The chart is available on pythonanywhere](http://dmca.pythonanywhere.com/cams/)
 (if it's not overloaded).
 
