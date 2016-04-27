@@ -8,16 +8,17 @@ Lowe,Ball Nut,2,Red,4.5,9,19,8,37
 Lowe,Ball Nut,3,Gold,6,12,21,8,54
 Lowe,Ball Nut,4,Green,8,14,23,8,57
 Lowe,Ball Nut,5,Purple,10.5,18,24,8,73
-Metolius,Master Cam,00,grey,8.6,11.9,30,5,62.4
-Metolius,Master Cam,0,purple,9.9,15,30,5,65.2
-Metolius,Master Cam,1,blue,12.5,18,35,8,68
-Metolius,Master Cam,2,yellow,15.7,22.6,35,10,70.9
-Metolius,Master Cam,3,orange,18.8,26.4,40,10,82.2
-Metolius,Master Cam,4,red,23.66,33.5,40,10,90.7
-Metolius,Master Cam,5,black,27.7,39.6,45,10,99.2
-Metolius,Master Cam,6,green,32.5,48,45,10,110.6
-Metolius,Master Cam UL,7,blue,40.0,57.5,,10,112
-Metolius,Master Cam UL,8,purple,48.5,71.5,,10,10,129
+BD,Camalot C4,0.3,Blue,13.8,23.4,42,10,71
+Metolius,UL Master Cam,00,Grey,8.5,12.0,30,5,45
+Metolius,UL Master Cam,0,Purple,10.0,15.0,30,5,45
+Metolius,UL Master Cam,1,Blue,12.5,18.0,32,8,52
+Metolius,UL Master Cam,2,Yellow,15.5,22.5,32,10,55
+Metolius,UL Master Cam,3,Orange,18.5,26.5,37,10,65
+Metolius,UL Master Cam,4,Red,23.5,33.5,38,10,75
+Metolius,UL Master Cam,5,Black,28.0,39.5,41,10,85
+Metolius,UL Master Cam,6,Green,32.5,48.0,42,10,96
+Metolius,UL Master Cam,7,Blue,40.0,57.5,46,10,112
+Metolius,UL Master Cam,8,Purple,48.5,71.5,46,10,129
 BD,Camalot C4,0.3,Blue,13.8,23.4,42,10,71
 BD,Camalot C4,0.4,Grey,15.5,26.7,42,10,82
 BD,Camalot C4,0.5,Purple,19.6,33.5,45,12,97

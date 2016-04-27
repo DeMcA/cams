@@ -41,9 +41,8 @@ def get_table_data(url):
     try:
         table = soup.find('table')
         rows = table.find_all('tr')
-    except AttributeError as e:
+    except AttributeError:
         raise ValueError("Table not found.")
-
     return parse_rows(rows)
 
 def clean_file(infile, outfile='temp.csv'):
