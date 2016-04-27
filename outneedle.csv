@@ -16,8 +16,8 @@ Metolius,Master Cam,3,orange,18.8,26.4,40,10,82.2
 Metolius,Master Cam,4,red,23.66,33.5,40,10,90.7
 Metolius,Master Cam,5,black,27.7,39.6,45,10,99.2
 Metolius,Master Cam,6,green,32.5,48,45,10,110.6
-Metolius,Master Cam,7,blue,40.0,57.5,,10,112
-Metolius,Master Cam,8,purple,48.5,71.5,,10,10,129
+Metolius,Master Cam UL,7,blue,40.0,57.5,,10,112
+Metolius,Master Cam UL,8,purple,48.5,71.5,,10,10,129
 BD,Camalot C4,0.3,Blue,13.8,23.4,42,10,71
 BD,Camalot C4,0.4,Grey,15.5,26.7,42,10,82
 BD,Camalot C4,0.5,Purple,19.6,33.5,45,12,97
@@ -78,11 +78,13 @@ CCH,Alien,1/2,green,13,22,33.02,7,70
 CCH,Alien,3/4,yellow,15,25,33.02,9,80
 CCH,Alien,7/8,grey,17,30,33.02,10,82
 CCH,Alien,1,red,20,33,33.02,10,84
+Totem,Totem,0.5,black,11.7,18.9,,6,69
 Totem,Totem,0.65,blue,13.8,22.5,30,8,75
 Totem,Totem,0.8,yellow,17,27.7,32,9,83
 Totem,Totem,1,purple,20.9,34.2,34,10,95
 Totem,Totem,1.25,green,25.7,42.3,37,13,109
 Totem,Totem,1.5,red,31.6,52.2,41,13,132.5
+Totem,Totem,1.8,orange,39.7,64.2,,13,144
 DMM,4CU,0,Blue,13,19,42,14,75
 DMM,4CU,0.5,Red,17,24,42,14,80
 DMM,4CU,1,Gold,19,29,48,14,93
