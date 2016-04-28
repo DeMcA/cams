@@ -6,14 +6,17 @@
 
 <body>
     <div class=matplotlib>
-        <img src="{{ url_for('chart', selected=selected, sort_by=sort_by)}}">
+        <img src="{{ url_for('chart', selected=selected, sort_by=sort_by, units=units)}}">
     </div>
     <form method="post">
 
     <input type="submit", value="Plot Cams"><br><br>
     Sort by:
     <input type="radio", name="sort_by" value="size_l" checked="check"> Min Size
-    <input type="radio", name="sort_by" value="model" > Model name
+    <input type="radio", name="sort_by" value="model"> Model name
+    <br>
+    <input type="radio", name="units" value="metric" checked="checked"> Metric
+    <input type="radio", name="units" value="imperial"> Imperial
     <br>
 
     <script language="JavaScript">
@@ -29,21 +32,142 @@
 
     <br> <input type="checkbox" onClick="toggle_all(this)", name="toggle" /> Everything <br>
 
-    <br> Totem Totem Basics <br>
+    <br> BD Camalot C3s <br>
             <script language="JavaScript">
-            function toggle_Totem_Basic(source) {
-                checkboxes_Totem_Basic = document.getElementsByName('check_Totem_Basic');
-                for (var i=0, n=checkboxes_Totem_Basic.length; i<n; i++) {
-                    checkboxes_Totem_Basic[i].checked = source.checked;
+            function toggle_Camalot_C3(source) {
+                checkboxes_Camalot_C3 = document.getElementsByName('check_Camalot_C3');
+                for (var i=0, n=checkboxes_Camalot_C3.length; i<n; i++) {
+                    checkboxes_Camalot_C3[i].checked = source.checked;
                 }
             }
             </script>
     
-        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.65", class="check" > 0.65
-        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.75", class="check" > 0.75
-        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.95", class="check" > 0.95
-        <input type="checkbox" onClick="toggle_Totem_Basic(this)", name="all" /> All <br>
+        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 0", class="check" > 0
+        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 00", class="check" > 00
+        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 000", class="check" > 000
+        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 1", class="check" > 1
+        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 2", class="check" > 2
+        <input type="checkbox" onClick="toggle_Camalot_C3(this)", name="all" /> All <br>
+    <br> BD Camalot C4s <br>
+            <script language="JavaScript">
+            function toggle_Camalot_C4(source) {
+                checkboxes_Camalot_C4 = document.getElementsByName('check_Camalot_C4');
+                for (var i=0, n=checkboxes_Camalot_C4.length; i<n; i++) {
+                    checkboxes_Camalot_C4[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.3", class="check" > 0.3
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.4", class="check" > 0.4
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.75", class="check" > 0.75
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 1", class="check" > 1
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 2", class="check" > 2
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 3", class="check" > 3
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 4", class="check" > 4
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 5", class="check" > 5
+        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 6", class="check" > 6
+        <input type="checkbox" onClick="toggle_Camalot_C4(this)", name="all" /> All <br>
+    <br> BD X4s <br>
+            <script language="JavaScript">
+            function toggle_X4(source) {
+                checkboxes_X4 = document.getElementsByName('check_X4');
+                for (var i=0, n=checkboxes_X4.length; i<n; i++) {
+                    checkboxes_X4[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_X4", value="X4 0.1", class="check" > 0.1
+        <input type="checkbox", name="check_X4", value="X4 0.2", class="check" > 0.2
+        <input type="checkbox", name="check_X4", value="X4 0.3", class="check" > 0.3
+        <input type="checkbox", name="check_X4", value="X4 0.4", class="check" > 0.4
+        <input type="checkbox", name="check_X4", value="X4 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_X4", value="X4 0.75", class="check" > 0.75
+        <input type="checkbox" onClick="toggle_X4(this)", name="all" /> All <br>
+    <br> CCH Aliens <br>
+            <script language="JavaScript">
+            function toggle_Alien(source) {
+                checkboxes_Alien = document.getElementsByName('check_Alien');
+                for (var i=0, n=checkboxes_Alien.length; i<n; i++) {
+                    checkboxes_Alien[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Alien", value="Alien 1", class="check" > 1
+        <input type="checkbox", name="check_Alien", value="Alien 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_Alien", value="Alien 0.333", class="check" > 0.333
+        <input type="checkbox", name="check_Alien", value="Alien 0.75", class="check" > 0.75
+        <input type="checkbox", name="check_Alien", value="Alien 0.375", class="check" > 0.375
+        <input type="checkbox", name="check_Alien", value="Alien 0.875", class="check" > 0.875
+        <input type="checkbox" onClick="toggle_Alien(this)", name="all" /> All <br>
+    <br> Camp Tricams <br>
+            <script language="JavaScript">
+            function toggle_Tricam(source) {
+                checkboxes_Tricam = document.getElementsByName('check_Tricam');
+                for (var i=0, n=checkboxes_Tricam.length; i<n; i++) {
+                    checkboxes_Tricam[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Tricam", value="Tricam 0.1255", class="check" > 0.1255
+        <input type="checkbox", name="check_Tricam", value="Tricam 0.25", class="check" > 0.25
+        <input type="checkbox", name="check_Tricam", value="Tricam 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_Tricam", value="Tricam 1", class="check" > 1
+        <input type="checkbox", name="check_Tricam", value="Tricam 1.5", class="check" > 1.5
+        <input type="checkbox", name="check_Tricam", value="Tricam 2", class="check" > 2
+        <input type="checkbox", name="check_Tricam", value="Tricam 2.5", class="check" > 2.5
+        <input type="checkbox", name="check_Tricam", value="Tricam 3", class="check" > 3
+        <input type="checkbox", name="check_Tricam", value="Tricam 3.5", class="check" > 3.5
+        <input type="checkbox", name="check_Tricam", value="Tricam 4", class="check" > 4
+        <input type="checkbox", name="check_Tricam", value="Tricam 5", class="check" > 5
+        <input type="checkbox", name="check_Tricam", value="Tricam 6", class="check" > 6
+        <input type="checkbox", name="check_Tricam", value="Tricam 7", class="check" > 7
+        <input type="checkbox" onClick="toggle_Tricam(this)", name="all" /> All <br>
+    <br> DMM 4CUs <br>
+            <script language="JavaScript">
+            function toggle_4CU(source) {
+                checkboxes_4CU = document.getElementsByName('check_4CU');
+                for (var i=0, n=checkboxes_4CU.length; i<n; i++) {
+                    checkboxes_4CU[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_4CU", value="4CU 0", class="check" > 0
+        <input type="checkbox", name="check_4CU", value="4CU 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_4CU", value="4CU 1", class="check" > 1
+        <input type="checkbox", name="check_4CU", value="4CU 1.25", class="check" > 1.25
+        <input type="checkbox", name="check_4CU", value="4CU 1.5", class="check" > 1.5
+        <input type="checkbox", name="check_4CU", value="4CU 1.75", class="check" > 1.75
+        <input type="checkbox", name="check_4CU", value="4CU 2", class="check" > 2
+        <input type="checkbox", name="check_4CU", value="4CU 2.5", class="check" > 2.5
+        <input type="checkbox", name="check_4CU", value="4CU 3", class="check" > 3
+        <input type="checkbox", name="check_4CU", value="4CU 3.5", class="check" > 3.5
+        <input type="checkbox", name="check_4CU", value="4CU 4", class="check" > 4
+        <input type="checkbox" onClick="toggle_4CU(this)", name="all" /> All <br>
+    <br> DMM Dragons <br>
+            <script language="JavaScript">
+            function toggle_Dragon(source) {
+                checkboxes_Dragon = document.getElementsByName('check_Dragon');
+                for (var i=0, n=checkboxes_Dragon.length; i<n; i++) {
+                    checkboxes_Dragon[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Dragon", value="Dragon 0", class="check" > 0
+        <input type="checkbox", name="check_Dragon", value="Dragon 00", class="check" > 00
+        <input type="checkbox", name="check_Dragon", value="Dragon 1", class="check" > 1
+        <input type="checkbox", name="check_Dragon", value="Dragon 2", class="check" > 2
+        <input type="checkbox", name="check_Dragon", value="Dragon 3", class="check" > 3
+        <input type="checkbox", name="check_Dragon", value="Dragon 4", class="check" > 4
+        <input type="checkbox", name="check_Dragon", value="Dragon 5", class="check" > 5
+        <input type="checkbox", name="check_Dragon", value="Dragon 6", class="check" > 6
+        <input type="checkbox" onClick="toggle_Dragon(this)", name="all" /> All <br>
     <br> Lowe Ball Nuts <br>
             <script language="JavaScript">
             function toggle_Ball_Nut(source) {
@@ -70,8 +194,8 @@
             }
             </script>
     
-        <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 00", class="check" > 00
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 0", class="check" > 0
+        <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 00", class="check" > 00
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 1", class="check" > 1
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 2", class="check" > 2
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 3", class="check" > 3
@@ -81,51 +205,6 @@
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 7", class="check" > 7
         <input type="checkbox", name="check_UL_Master_Cam", value="UL Master Cam 8", class="check" > 8
         <input type="checkbox" onClick="toggle_UL_Master_Cam(this)", name="all" /> All <br>
-    <br> BD Camalot C4s <br>
-            <script language="JavaScript">
-            function toggle_Camalot_C4(source) {
-                checkboxes_Camalot_C4 = document.getElementsByName('check_Camalot_C4');
-                for (var i=0, n=checkboxes_Camalot_C4.length; i<n; i++) {
-                    checkboxes_Camalot_C4[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.3", class="check" > 0.3
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.4", class="check" > 0.4
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 0.75", class="check" > 0.75
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 1", class="check" > 1
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 2", class="check" > 2
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 3", class="check" > 3
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 4", class="check" > 4
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 5", class="check" > 5
-        <input type="checkbox", name="check_Camalot_C4", value="Camalot C4 6", class="check" > 6
-        <input type="checkbox" onClick="toggle_Camalot_C4(this)", name="all" /> All <br>
-    <br> Camp Tricams <br>
-            <script language="JavaScript">
-            function toggle_Tricam(source) {
-                checkboxes_Tricam = document.getElementsByName('check_Tricam');
-                for (var i=0, n=checkboxes_Tricam.length; i<n; i++) {
-                    checkboxes_Tricam[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_Tricam", value="Tricam 0.1255", class="check" > 0.1255
-        <input type="checkbox", name="check_Tricam", value="Tricam 0.25", class="check" > 0.25
-        <input type="checkbox", name="check_Tricam", value="Tricam 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_Tricam", value="Tricam 1", class="check" > 1
-        <input type="checkbox", name="check_Tricam", value="Tricam 1.5", class="check" > 1.5
-        <input type="checkbox", name="check_Tricam", value="Tricam 2", class="check" > 2
-        <input type="checkbox", name="check_Tricam", value="Tricam 2.5", class="check" > 2.5
-        <input type="checkbox", name="check_Tricam", value="Tricam 3", class="check" > 3
-        <input type="checkbox", name="check_Tricam", value="Tricam 3.5", class="check" > 3.5
-        <input type="checkbox", name="check_Tricam", value="Tricam 4", class="check" > 4
-        <input type="checkbox", name="check_Tricam", value="Tricam 5", class="check" > 5
-        <input type="checkbox", name="check_Tricam", value="Tricam 6", class="check" > 6
-        <input type="checkbox", name="check_Tricam", value="Tricam 7", class="check" > 7
-        <input type="checkbox" onClick="toggle_Tricam(this)", name="all" /> All <br>
     <br> Omega Pacific Link Cams <br>
             <script language="JavaScript">
             function toggle_Link_Cam(source) {
@@ -141,19 +220,6 @@
         <input type="checkbox", name="check_Link_Cam", value="Link Cam 1", class="check" > 1
         <input type="checkbox", name="check_Link_Cam", value="Link Cam 2", class="check" > 2
         <input type="checkbox" onClick="toggle_Link_Cam(this)", name="all" /> All <br>
-    <br> Wildcountry Technical Friends <br>
-            <script language="JavaScript">
-            function toggle_Technical_Friend(source) {
-                checkboxes_Technical_Friend = document.getElementsByName('check_Technical_Friend');
-                for (var i=0, n=checkboxes_Technical_Friend.length; i<n; i++) {
-                    checkboxes_Technical_Friend[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 5", class="check" > 5
-        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 6", class="check" > 6
-        <input type="checkbox" onClick="toggle_Technical_Friend(this)", name="all" /> All <br>
     <br> techROCK Alien Evolutions <br>
             <script language="JavaScript">
             function toggle_Alien_Evolution(source) {
@@ -164,82 +230,28 @@
             }
             </script>
     
-        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.333", class="check" > 0.333
-        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.375", class="check" > 0.375
-        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.75", class="check" > 0.75
-        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.875", class="check" > 0.875
         <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 1", class="check" > 1
+        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.333", class="check" > 0.333
+        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.75", class="check" > 0.75
+        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.375", class="check" > 0.375
+        <input type="checkbox", name="check_Alien_Evolution", value="Alien Evolution 0.875", class="check" > 0.875
         <input type="checkbox" onClick="toggle_Alien_Evolution(this)", name="all" /> All <br>
-    <br> BD Camalot C3s <br>
+    <br> Totem Totem Basics <br>
             <script language="JavaScript">
-            function toggle_Camalot_C3(source) {
-                checkboxes_Camalot_C3 = document.getElementsByName('check_Camalot_C3');
-                for (var i=0, n=checkboxes_Camalot_C3.length; i<n; i++) {
-                    checkboxes_Camalot_C3[i].checked = source.checked;
+            function toggle_Totem_Basic(source) {
+                checkboxes_Totem_Basic = document.getElementsByName('check_Totem_Basic');
+                for (var i=0, n=checkboxes_Totem_Basic.length; i<n; i++) {
+                    checkboxes_Totem_Basic[i].checked = source.checked;
                 }
             }
             </script>
     
-        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 000", class="check" > 000
-        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 00", class="check" > 00
-        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 0", class="check" > 0
-        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 1", class="check" > 1
-        <input type="checkbox", name="check_Camalot_C3", value="Camalot C3 2", class="check" > 2
-        <input type="checkbox" onClick="toggle_Camalot_C3(this)", name="all" /> All <br>
-    <br> Wildcountry New Friends <br>
-            <script language="JavaScript">
-            function toggle_New_Friend(source) {
-                checkboxes_New_Friend = document.getElementsByName('check_New_Friend');
-                for (var i=0, n=checkboxes_New_Friend.length; i<n; i++) {
-                    checkboxes_New_Friend[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_New_Friend", value="New Friend 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_New_Friend", value="New Friend 0.75", class="check" > 0.75
-        <input type="checkbox", name="check_New_Friend", value="New Friend 1", class="check" > 1
-        <input type="checkbox", name="check_New_Friend", value="New Friend 2", class="check" > 2
-        <input type="checkbox", name="check_New_Friend", value="New Friend 3", class="check" > 3
-        <input type="checkbox", name="check_New_Friend", value="New Friend 4", class="check" > 4
-        <input type="checkbox" onClick="toggle_New_Friend(this)", name="all" /> All <br>
-    <br> DMM Dragons <br>
-            <script language="JavaScript">
-            function toggle_Dragon(source) {
-                checkboxes_Dragon = document.getElementsByName('check_Dragon');
-                for (var i=0, n=checkboxes_Dragon.length; i<n; i++) {
-                    checkboxes_Dragon[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_Dragon", value="Dragon 00", class="check" > 00
-        <input type="checkbox", name="check_Dragon", value="Dragon 0", class="check" > 0
-        <input type="checkbox", name="check_Dragon", value="Dragon 1", class="check" > 1
-        <input type="checkbox", name="check_Dragon", value="Dragon 2", class="check" > 2
-        <input type="checkbox", name="check_Dragon", value="Dragon 3", class="check" > 3
-        <input type="checkbox", name="check_Dragon", value="Dragon 4", class="check" > 4
-        <input type="checkbox", name="check_Dragon", value="Dragon 5", class="check" checked="checked"> 5
-        <input type="checkbox", name="check_Dragon", value="Dragon 6", class="check" > 6
-        <input type="checkbox" onClick="toggle_Dragon(this)", name="all" /> All <br>
-    <br> CCH Aliens <br>
-            <script language="JavaScript">
-            function toggle_Alien(source) {
-                checkboxes_Alien = document.getElementsByName('check_Alien');
-                for (var i=0, n=checkboxes_Alien.length; i<n; i++) {
-                    checkboxes_Alien[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_Alien", value="Alien 0.333", class="check" > 0.333
-        <input type="checkbox", name="check_Alien", value="Alien 0.375", class="check" > 0.375
-        <input type="checkbox", name="check_Alien", value="Alien 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_Alien", value="Alien 0.75", class="check" > 0.75
-        <input type="checkbox", name="check_Alien", value="Alien 0.875", class="check" > 0.875
-        <input type="checkbox", name="check_Alien", value="Alien 1", class="check" > 1
-        <input type="checkbox" onClick="toggle_Alien(this)", name="all" /> All <br>
+        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.65", class="check" > 0.65
+        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.75", class="check" > 0.75
+        <input type="checkbox", name="check_Totem_Basic", value="Totem Basic 0.95", class="check" > 0.95
+        <input type="checkbox" onClick="toggle_Totem_Basic(this)", name="all" /> All <br>
     <br> Totem Totems <br>
             <script language="JavaScript">
             function toggle_Totem(source) {
@@ -258,45 +270,19 @@
         <input type="checkbox", name="check_Totem", value="Totem 1.5", class="check" > 1.5
         <input type="checkbox", name="check_Totem", value="Totem 1.8", class="check" > 1.8
         <input type="checkbox" onClick="toggle_Totem(this)", name="all" /> All <br>
-    <br> DMM 4CUs <br>
+    <br> Wild Country Technical Friends <br>
             <script language="JavaScript">
-            function toggle_4CU(source) {
-                checkboxes_4CU = document.getElementsByName('check_4CU');
-                for (var i=0, n=checkboxes_4CU.length; i<n; i++) {
-                    checkboxes_4CU[i].checked = source.checked;
+            function toggle_Technical_Friend(source) {
+                checkboxes_Technical_Friend = document.getElementsByName('check_Technical_Friend');
+                for (var i=0, n=checkboxes_Technical_Friend.length; i<n; i++) {
+                    checkboxes_Technical_Friend[i].checked = source.checked;
                 }
             }
             </script>
     
-        <input type="checkbox", name="check_4CU", value="4CU 0", class="check" > 0
-        <input type="checkbox", name="check_4CU", value="4CU 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_4CU", value="4CU 1", class="check" checked="checked"> 1
-        <input type="checkbox", name="check_4CU", value="4CU 1.25", class="check" > 1.25
-        <input type="checkbox", name="check_4CU", value="4CU 1.5", class="check" > 1.5
-        <input type="checkbox", name="check_4CU", value="4CU 1.75", class="check" > 1.75
-        <input type="checkbox", name="check_4CU", value="4CU 2", class="check" > 2
-        <input type="checkbox", name="check_4CU", value="4CU 2.5", class="check" > 2.5
-        <input type="checkbox", name="check_4CU", value="4CU 3", class="check" > 3
-        <input type="checkbox", name="check_4CU", value="4CU 3.5", class="check" > 3.5
-        <input type="checkbox", name="check_4CU", value="4CU 4", class="check" checked="checked"> 4
-        <input type="checkbox" onClick="toggle_4CU(this)", name="all" /> All <br>
-    <br> BD X4s <br>
-            <script language="JavaScript">
-            function toggle_X4(source) {
-                checkboxes_X4 = document.getElementsByName('check_X4');
-                for (var i=0, n=checkboxes_X4.length; i<n; i++) {
-                    checkboxes_X4[i].checked = source.checked;
-                }
-            }
-            </script>
-    
-        <input type="checkbox", name="check_X4", value="X4 0.1", class="check" > 0.1
-        <input type="checkbox", name="check_X4", value="X4 0.2", class="check" > 0.2
-        <input type="checkbox", name="check_X4", value="X4 0.3", class="check" > 0.3
-        <input type="checkbox", name="check_X4", value="X4 0.4", class="check" checked="checked"> 0.4
-        <input type="checkbox", name="check_X4", value="X4 0.5", class="check" > 0.5
-        <input type="checkbox", name="check_X4", value="X4 0.75", class="check" > 0.75
-        <input type="checkbox" onClick="toggle_X4(this)", name="all" /> All <br>
+        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 5", class="check" > 5
+        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 6", class="check" > 6
+        <input type="checkbox" onClick="toggle_Technical_Friend(this)", name="all" /> All <br>
     <br> Wildcountry Heliums <br>
             <script language="JavaScript">
             function toggle_Helium(source) {
@@ -311,12 +297,42 @@
         <input type="checkbox", name="check_Helium", value="Helium 0.5", class="check" > 0.5
         <input type="checkbox", name="check_Helium", value="Helium 1", class="check" > 1
         <input type="checkbox", name="check_Helium", value="Helium 1.5", class="check" > 1.5
-        <input type="checkbox", name="check_Helium", value="Helium 2", class="check" checked="checked"> 2
-        <input type="checkbox", name="check_Helium", value="Helium 2.5", class="check" checked="checked"> 2.5
-        <input type="checkbox", name="check_Helium", value="Helium 3", class="check" checked="checked"> 3
+        <input type="checkbox", name="check_Helium", value="Helium 2", class="check" > 2
+        <input type="checkbox", name="check_Helium", value="Helium 2.5", class="check" > 2.5
+        <input type="checkbox", name="check_Helium", value="Helium 3", class="check" > 3
         <input type="checkbox", name="check_Helium", value="Helium 3.5", class="check" > 3.5
         <input type="checkbox", name="check_Helium", value="Helium 4", class="check" > 4
         <input type="checkbox" onClick="toggle_Helium(this)", name="all" /> All <br>
+    <br> Wildcountry New Friends <br>
+            <script language="JavaScript">
+            function toggle_New_Friend(source) {
+                checkboxes_New_Friend = document.getElementsByName('check_New_Friend');
+                for (var i=0, n=checkboxes_New_Friend.length; i<n; i++) {
+                    checkboxes_New_Friend[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_New_Friend", value="New Friend 0.5", class="check" > 0.5
+        <input type="checkbox", name="check_New_Friend", value="New Friend 0.75", class="check" > 0.75
+        <input type="checkbox", name="check_New_Friend", value="New Friend 1", class="check" > 1
+        <input type="checkbox", name="check_New_Friend", value="New Friend 2", class="check" > 2
+        <input type="checkbox", name="check_New_Friend", value="New Friend 3", class="check" > 3
+        <input type="checkbox", name="check_New_Friend", value="New Friend 4", class="check" > 4
+        <input type="checkbox" onClick="toggle_New_Friend(this)", name="all" /> All <br>
+    <br> Wildcountry Technical Friends <br>
+            <script language="JavaScript">
+            function toggle_Technical_Friend(source) {
+                checkboxes_Technical_Friend = document.getElementsByName('check_Technical_Friend');
+                for (var i=0, n=checkboxes_Technical_Friend.length; i<n; i++) {
+                    checkboxes_Technical_Friend[i].checked = source.checked;
+                }
+            }
+            </script>
+    
+        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 5", class="check" > 5
+        <input type="checkbox", name="check_Technical_Friend", value="Technical Friend 6", class="check" > 6
+        <input type="checkbox" onClick="toggle_Technical_Friend(this)", name="all" /> All <br>
     <br> Wildcountry Zeros <br>
             <script language="JavaScript">
             function toggle_Zero(source) {
@@ -331,8 +347,8 @@
         <input type="checkbox", name="check_Zero", value="Zero 2", class="check" > 2
         <input type="checkbox", name="check_Zero", value="Zero 3", class="check" > 3
         <input type="checkbox", name="check_Zero", value="Zero 4", class="check" > 4
-        <input type="checkbox", name="check_Zero", value="Zero 5", class="check" checked="checked"> 5
-        <input type="checkbox", name="check_Zero", value="Zero 6", class="check" checked="checked"> 6
+        <input type="checkbox", name="check_Zero", value="Zero 5", class="check" > 5
+        <input type="checkbox", name="check_Zero", value="Zero 6", class="check" > 6
         <input type="checkbox" onClick="toggle_Zero(this)", name="all" /> All
         <br>
     </form>

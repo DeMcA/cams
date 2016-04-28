@@ -51,7 +51,7 @@ def read_file(infile):
     return equipment
 
 
-def plot_data(equipment, cupboard=None, sort_by='size_l', units='imperial'):
+def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
     '''
     Function to plot bars for a subset of all available Gear instances
 
@@ -100,7 +100,6 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='imperial'):
 
     #if __name__ != '__main__':
     r = fig.canvas.get_renderer()
-    print r
     bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
     axes_size = bbox.width * fig.dpi
     #print "xlim()",plt.xlim()
