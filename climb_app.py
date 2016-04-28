@@ -20,6 +20,7 @@ def images(name=None):
                 selected.append(j)
                 # Can use itertools.chain, nested list comprehension, but I
                 # probably shouldn't be reading this list in the first place.
+    print selected
     sort_by = request.form.get('sort_by')
     units = request.form.get('units')
     return render_template('cams.html', selected=selected, sort_by=sort_by,
