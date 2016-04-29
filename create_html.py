@@ -22,7 +22,7 @@ html_top = '''<html>
 
     <input type="submit", value="Plot Cams"><br><br>
     Sort by:
-    <input type="radio", name="sort_by" value="size_l" checked="check"> Min Size
+    <input type="radio", name="sort_by" value="size_l" checked="checked"> Min Size
     <input type="radio", name="sort_by" value="model"> Model name
     <br>
     <input type="radio", name="units" value="metric" checked="checked"> Metric
@@ -31,7 +31,7 @@ html_top = '''<html>
 
     <script language="JavaScript">
     function toggle_all(source) {
-        checkboxes_all = document.getElementsByTagName('input');
+        checkboxes_all = document.getElementsByName('check');
         for (var i=0, n=checkboxes_all.length; i<n; i++) {
             if (checkboxes_all[i].type == 'checkbox'){
                 checkboxes_all[i].checked = source.checked;
@@ -56,7 +56,7 @@ def make_toggle_html(make, model):
     model_top =  '''    <br> {2} {1} <br>
             <script language="JavaScript">
             function toggle_{0}(source) {{
-                checkboxes_{0} = document.getElementsByName('check_{0}');
+                checkboxes_{0} = document.getElementsByClassName('check_{0}');
                 for (var i=0, n=checkboxes_{0}.length; i<n; i++) {{
                     checkboxes_{0}[i].checked = source.checked;
                 }}
@@ -88,16 +88,16 @@ def write_html(reader, pre_checked=MY_STUFF, outfile=OUTFILE):
             print(make_toggle_html(make, model), file=f)
         elif model != prev_model:
             #print(model, prev_model)
-            print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> All <br>'\
+            print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all", class="check"" /> All <br>'\
                   .format(prev_model), file=f)
             print(make_toggle_html(make, model), file=f)
         checked = ''
         if name in pre_checked:
             checked = 'checked="checked"'
-        print('        <input type="checkbox", name="check_{3}", value="{0}", class="check" {1}> {2}'\
+        print('        <input type="checkbox", name="check", value="{0}", class="check_{3}" {1}> {2}'\
               .format(name, checked, number, model), file=f)
         prev_model = model
-    print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all" /> All'\
+    print('        <input type="checkbox" onClick="toggle_{0}(this)", name="all", class="check" /> All'\
             .format(prev_model), file=f)
     print(html_bottom, file=f)
 
