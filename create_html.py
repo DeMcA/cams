@@ -6,7 +6,7 @@ import cams
 
 INFILE = 'outneedle.csv'
 OUTFILE = os.path.join('templates', 'cams.html')
-MY_STUFF = cams.my_stuff # list of names that will be pre-checked
+MY_STUFF = [] # cams.my_stuff # list of names that will be pre-checked
 
 html_top = '''<html>
 
@@ -16,14 +16,17 @@ html_top = '''<html>
 
 <body>
     <div class=matplotlib>
-        <img src="{{ url_for('chart', selected=selected, sort_by=sort_by)}}">
+        <img src="{{ url_for('chart', selected=selected, sort_by=sort_by, units=units)}}">
     </div>
     <form method="post">
 
     <input type="submit", value="Plot Cams"><br><br>
     Sort by:
     <input type="radio", name="sort_by" value="size_l" checked="check"> Min Size
-    <input type="radio", name="sort_by" value="model" > Model name
+    <input type="radio", name="sort_by" value="model"> Model name
+    <br>
+    <input type="radio", name="units" value="metric" checked="checked"> Metric
+    <input type="radio", name="units" value="imperial"> Imperial
     <br>
 
     <script language="JavaScript">
