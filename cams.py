@@ -3,14 +3,13 @@
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-#import numpy as np
 from fractions import Fraction
+from operator import attrgetter
 import csv, os
-from operator import itemgetter, attrgetter
 
 
 class Gear(object):
-    '''parent class for data and methods associated with a piece of gear'''
+    ''' Parent class for data and methods associated with a piece of gear '''
     def __init__(self, make, model, number, size_l, size_u,
                  rating=None, weight=None, colour=None):
         self.make = make
@@ -25,7 +24,7 @@ class Gear(object):
         self.cam_range = self.size_u - self.size_l
 
     def graph_data(self):
-        ''' returns the data required for each entry in a plot '''
+        ''' Returns the data required for each entry in a plot '''
         return [self.name, self.cam_range, float(self.size_l), self.colour]
 
     def __iter__(self):
@@ -57,14 +56,10 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
 
     equipment:  dictionary of Gear instances
     cupboard:   list of keys to select from equipment
-    sort_by:    0 -> name
-                1 -> cam_range
-                2 -> size_l (lowest possible size)
-                3 -> colour
+    sort_by:    "size_l", the minimum size of the cam or "model"
     '''
     if cupboard is not None:
         data = []
-        #data.append(equipment[e].graph_data())
         for e in cupboard:
             data.append(equipment[e])
     else:
@@ -83,18 +78,13 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
 
     ### Now use pyplot with these data:
     #fig, ax = plt.subplots()
-    #max_name = max([len(i) for i in names])
-    #t = plt.text(0.5, 0.5, max_name)
-    #bb = t.get_window_extent(renderer=r)
-    #width = bb.width
-    #fig.subplots_adjust(top=0.5)
     ax = fig.add_subplot(111)
     chart = ax.barh(y_values, cam_ranges, left=lefts, color=colours,
              height = 0.8, align='center')
     fig.set_size_inches(10, 0.3 * len(names))
     ax.yaxis.set_visible(False)
     plt.grid(axis='x')
-    ax.set_axisbelow(True)
+    ax.set_axisbelow(True) # So gridlines go behind bars
     #plt.subplots_adjust(right=0.9)
     plt.title('Cam Size Chart')
 
@@ -109,7 +99,8 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
     for i,j in enumerate(chart):
         bar_extent = j.get_width()+j.get_x()
         label_x = bar_extent + label_space
-        t = plt.text(label_x, j.get_y()+j.get_height()/2, names[i], verticalalignment='center')
+        t = plt.text(label_x, j.get_y()+j.get_height()/2,
+                     names[i], verticalalignment='center')
         w = t.get_window_extent(renderer=r).width
         if w > max_label_width:
             max_label_width = w
@@ -129,9 +120,12 @@ my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5'
             '4CU 4', '4CU 1', 'X4 0.4']
 
 def equipment(infile='outneedle.csv'):
+    '''
+    Reads infile and uses read_file() to return a dictionary of Gear instaces
+    '''
     this_dir = os.path.dirname(__file__)
     return read_file(os.path.join(this_dir, infile))
 
 if __name__ == '__main__':
     plt.switch_backend('TkAgg')
-    plt.show(plot_data(equipment(), cupboard=my_stuff, sort_by=2))
+    plt.show(plot_data(equipment(), cupboard=my_stuff))
