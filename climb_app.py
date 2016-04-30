@@ -20,7 +20,7 @@ def images(name=None):
 @app.route('/chart&<sort_by>&<units>')
 def chart(selected=None, sort_by=None, units=None):
     results = request.args.getlist('selected')
-    fig = cams.plot_data(cams.equipment(), results, sort_by, units)
+    fig = cams.plot_data(cams.all_equipment, results, sort_by, units)
     img = StringIO.StringIO()
     fig.savefig(img, format='png', bbox_inches='tight', pad_inches=0.1)
     img.seek(0)

@@ -50,7 +50,17 @@ def read_file(infile):
     return equipment
 
 
-def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
+def equipment(infile='outneedle.csv'):
+    '''
+    Reads infile and uses read_file() to return a dictionary of Gear instaces
+    '''
+    this_dir = os.path.dirname(__file__)
+    return read_file(os.path.join(this_dir, infile))
+
+all_equipment = equipment('outneedle.csv')
+
+
+def plot_data(equipment=all_equipment, cupboard=[], sort_by='size_l', units='metric'):
     '''
     Function to plot bars for a subset of all available Gear instances
 
@@ -58,7 +68,7 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
     cupboard:   list of keys to select from equipment
     sort_by:    "size_l", the minimum size of the cam or "model"
     '''
-    if cupboard is not None:
+    if len(cupboard) > 0:
         data = []
         for e in cupboard:
             data.append(equipment[e])
@@ -118,14 +128,6 @@ def plot_data(equipment, cupboard=None, sort_by='size_l', units='metric'):
 
 my_stuff = ['Zero 5', 'Zero 6', 'Dragon 5', 'Helium 2', 'Helium 3', 'Helium 2.5',
             '4CU 4', '4CU 1', 'X4 0.4']
-
-def equipment(infile='outneedle.csv'):
-    '''
-    Reads infile and uses read_file() to return a dictionary of Gear instaces
-    '''
-    this_dir = os.path.dirname(__file__)
-    return read_file(os.path.join(this_dir, infile))
-
 if __name__ == '__main__':
     plt.switch_backend('TkAgg')
-    plt.show(plot_data(equipment(), cupboard=my_stuff))
+    plt.show(plot_data())
