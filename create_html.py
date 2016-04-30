@@ -15,6 +15,13 @@ html_top = '''<html>
 </head>
 
 <body>
+
+    <div class=testing>
+        {% for item in selected %}
+            {{ item }}
+        {% endfor %}
+    </div>
+
     <div class=matplotlib>
         <img src="{{ url_for('chart', selected=selected, sort_by=sort_by, units=units)}}">
     </div>
@@ -22,12 +29,21 @@ html_top = '''<html>
 
     <input type="submit", value="Plot Cams"><br><br>
     Sort by:
-    <input type="radio", name="sort_by" value="size_l" checked="checked"> Min Size
-    <input type="radio", name="sort_by" value="model"> Model name
-    <br>
-    <input type="radio", name="units" value="metric" checked="checked"> Metric
-    <input type="radio", name="units" value="imperial"> Imperial
-    <br>
+    {% if sort_by == "size_l" %}
+        <input type="radio", name="sort_by" value="size_l" checked="checked"> Min Size
+        <input type="radio", name="sort_by" value="model"> Model name <br>
+    {% else %}
+        <input type="radio", name="sort_by", value="size_l" > Min Size
+        <input type="radio", name="sort_by", value="model", checked="checked"> Model name <br>
+    {% endif %}
+
+    {% if units == "metric" %}
+        <input type="radio", name="units", value="metric", checked="checked"> Metric
+        <input type="radio", name="units" value="imperial"> Imperial <br>
+    {% else %}
+        <input type="radio", name="units", value="metric" > Metric
+        <input type="radio", name="units", value="imperial", checked="checked"> Imperial <br>
+    {% endif %}
 
     <script language="JavaScript">
     function toggle_all(source) {
