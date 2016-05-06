@@ -50,14 +50,14 @@ def read_file(infile):
     return equipment
 
 
-def equipment(infile='outneedle.csv'):
+def equipment(infile='cam_sizes.csv'):
     '''
     Reads infile and uses read_file() to return a dictionary of Gear instaces
     '''
     this_dir = os.path.dirname(__file__)
     return read_file(os.path.join(this_dir, infile))
 
-all_equipment = equipment('outneedle.csv')
+all_equipment = equipment('cam_sizes.csv')
 
 
 def plot_data(equipment=all_equipment, cupboard=[], sort_by='size_l', units='metric'):
