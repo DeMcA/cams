@@ -4,7 +4,7 @@ from fractions import Fraction
 import csv, os
 import cams
 
-INFILE = 'outneedle.csv'
+INFILE = 'cam_sizes.csv'
 OUTFILE = os.path.join('templates', 'cams.html')
 MY_STUFF = [] # cams.my_stuff # list of names that will be pre-checked
 
