@@ -1,11 +1,11 @@
-#!/usr/local/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from fractions import Fraction
 from operator import attrgetter
-import csv, os
+import csv, os, pickle
 
 
 class Gear(object):
@@ -57,7 +57,20 @@ def equipment(infile='cam_sizes.csv'):
     this_dir = os.path.dirname(__file__)
     return read_file(os.path.join(this_dir, infile))
 
-all_equipment = equipment('cam_sizes.csv')
+
+def read_data(in_prefix='cam_sizes'):
+    try:
+        with open(in_prefix+'.p', 'rb') as f:
+            return pickle.load(f)
+    except:
+        return equipment(in_prefix+'.csv')
+
+
+all_equipment = read_data()
+
+def dump_equipment(outfile='cam_sizes.p'):
+    with open(outfile, 'wb') as f:
+        pickle.dump(all_equipment, f)
 
 
 def plot_data(equipment=all_equipment, cupboard=[], sort_by='size_l', units='metric'):

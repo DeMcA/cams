@@ -15,13 +15,6 @@ html_top = '''<html>
 </head>
 
 <body>
-
-    <div class=testing>
-        {% for item in selected %}
-            {{ item }}
-        {% endfor %}
-    </div>
-
     <div class=matplotlib>
         <img src="{{ url_for('chart', selected=selected, sort_by=sort_by, units=units)}}">
     </div>
