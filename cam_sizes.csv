@@ -1,7 +1,7 @@
 make,model,number,colour,size_l,size_u,head_width,strength,weight
-BD,Camalot C3,0,Green,10.7,15.8,28,7,59
-BD,Camalot C3,00,Purple,9.0,13.7,28,6,57
 BD,Camalot C3,000,Grey,7.8,12.9,28,4,55
+BD,Camalot C3,00,Purple,9.0,13.7,28,6,57
+BD,Camalot C3,0,Green,10.7,15.8,28,7,59
 BD,Camalot C3,1,Red,12.0,18.8,29,10,62
 BD,Camalot C3,2,Yellow,14.2,22.6,29,10,66
 BD,Camalot C4,0.3,Blue,13.8,23.4,42,10,71
@@ -50,8 +50,8 @@ DMM,4CU,2.5,Gold,33,55,53,14,123
 DMM,4CU,3,Purple,43,66,56,14,151
 DMM,4CU,3.5,Blue,51,82,65,14,185
 DMM,4CU,4,Silver,64,100,65,14,224
-DMM,Dragon,0,Silver,16,26.7,40.1,12,85
 DMM,Dragon,00,Blue,13.6,22.5,39.1,9,75
+DMM,Dragon,0,Silver,16,26.7,40.1,12,85
 DMM,Dragon,1,Purple,20,33,40.2,14,97
 DMM,Dragon,2,Green,24,41,40.8,14,106
 DMM,Dragon,3,Red,29,50,42.2,14,119
@@ -63,8 +63,8 @@ Lowe,Ball Nut,2,Red,4.5,9,19,8,37
 Lowe,Ball Nut,3,Gold,6,12,21,8,54
 Lowe,Ball Nut,4,Green,8,14,23,8,57
 Lowe,Ball Nut,5,Purple,10.5,18,24,8,73
-Metolius,UL Master Cam,0,Purple,10.0,15.0,30,5,45
 Metolius,UL Master Cam,00,Grey,8.5,12.0,30,5,45
+Metolius,UL Master Cam,0,Purple,10.0,15.0,30,5,45
 Metolius,UL Master Cam,1,Blue,12.5,18.0,32,8,52
 Metolius,UL Master Cam,2,Yellow,15.5,22.5,32,10,55
 Metolius,UL Master Cam,3,Orange,18.5,26.5,37,10,65
