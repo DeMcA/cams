@@ -28,5 +28,5 @@ def chart(selected=None, sort_by=None, units=None):
 
 
 if __name__ == '__main__':
-    equipment = cams.equipment()
+    equipment = cams.all_equipment
     app.run(host='0.0.0.0', debug=True)
