@@ -109,20 +109,20 @@ Wildcountry,New Friend,1,Red,31.7,53.6,52,10,134
 Wildcountry,New Friend,2,Gold,41.5,69.3,57,10,159
 Wildcountry,New Friend,3,Blue,52.7,88.0,60,10,202
 Wildcountry,New Friend,4,Grey,66.8,112.1,75,10,283
-Wildcountry,Technical Friend,00,Gold,10,16,60,10
-Wildcountry,Technical Friend,0,Blue,13,19,79,14
-Wildcountry,Technical Friend,0.5,Red,17,24,85,14
-Wildcountry,Technical Friend,1,Gold,19,29,95,14
-Wildcountry,Technical Friend,1.25,Purple,21,33,98,14
-Wildcountry,Technical Friend,1.5,Silver,23,35,98,14
-Wildcountry,Technical Friend,1.75,Green,25,41,107,14
-Wildcountry,Technical Friend,2,Red,29,44,111,14
-Wildcountry,Technical Friend,2.5,Gold,33,55,122,14
-Wildcountry,Technical Friend,3,Purple,43,66,155,14
-Wildcountry,Technical Friend,3.5,Blue,51,82,178,14
-Wildcountry,Technical Friend,4,Silver,64,100,217,14
-Wildcountry,Technical Friend,5,Red,84,138,348,14
-Wildcountry,Technical Friend,6,Green,118,194,533,14
+Wildcountry,Technical Friend,00,Gold,10,16,60,10,60
+Wildcountry,Technical Friend,0,Blue,13,19,79,14,79
+Wildcountry,Technical Friend,0.5,Red,17,24,85,14,85
+Wildcountry,Technical Friend,1,Gold,19,29,95,14,95
+Wildcountry,Technical Friend,1.25,Purple,21,33,98,14,98
+Wildcountry,Technical Friend,1.5,Silver,23,35,98,14,98
+Wildcountry,Technical Friend,1.75,Green,25,41,107,14,107
+Wildcountry,Technical Friend,2,Red,29,44,111,14,111
+Wildcountry,Technical Friend,2.5,Gold,33,55,122,14,122
+Wildcountry,Technical Friend,3,Purple,43,66,155,14,155
+Wildcountry,Technical Friend,3.5,Blue,51,82,178,14,178
+Wildcountry,Technical Friend,4,Silver,64,100,217,14,217
+Wildcountry,Technical Friend,5,Red,84,138,348,14,339
+Wildcountry,Technical Friend,6,Green,118,194,533,14,533
 Wildcountry,Zero,1,Purple,5.5,7.8,,3,25
 Wildcountry,Zero,2,Green,7.0,9.8,,4,32
 Wildcountry,Zero,3,Silver,8.5,12.2,,6,44
