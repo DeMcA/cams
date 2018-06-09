@@ -1,4 +1,4 @@
-- Change how checkboxes work, e.g.: https://stackoverflow.com/questions/12165021/d3-how-can-i-change-data-in-an-existing-bar-chart
+- Change how checkboxes work, e.g.: https://stackoverflow.com/questions/14958825/dynamically-update-chart-data-in-d3
 - Resize canvas based on selection
 - webpack or similar
 - labels, axis etc.
