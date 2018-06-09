@@ -1,0 +1,6 @@
+- Interactively select subset of data
+- Resize canvas based on selection
+- webpack or similar
+- labels, axis etc.
+- popups/links to extra data
+- unittests in d3?
