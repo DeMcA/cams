@@ -55,10 +55,10 @@ d3.tsv("data/cams.csv").then( (data) => {
         var bars = svg.selectAll("rect")
             .data(data, (d) => camId(d) );
 
-        bars.attr("class", "update");
+        // bars.attr("class", "update");
 
         bars.enter().append("rect")
-            .attr("class", "enter")
+        // .attr("class", "enter")
             .attr("y", (d,i) => i * 20)
             .attr("height", 10)
             .attr("width", (d) => 10 * (d.size_u - d.size_l))
@@ -66,26 +66,32 @@ d3.tsv("data/cams.csv").then( (data) => {
             .attr("fill", (d) => d.colour.toLowerCase())
             .attr("stroke", (d) => d.colour.toLowerCase())
             .merge(bars)
-                .attr("y", (d,i) => i * 20);
+            .attr("y", (d,i) => i * 20);
 
         bars.exit().remove();
     }
 
     function changeSelection(datum, isChecked) {
-        isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => {
-            return camId(i) !== camId(datum) }
-        )
+        isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
         update(selectedData);
     }
 
     function changeMakeModelSelection(makeModelClass, parentCheckBox) {
         d3.selectAll(makeModelClass)
-        .each( function(d) {
-            if( d3.select(this).node().checked !== parentCheckBox.checked) {
-                changeSelection(d, parentCheckBox.checked);
-            }
-        })
-        .property("checked", parentCheckBox.checked);
+            .each( function(d) {
+                let isChecked = d3.select(this).node().checked;
+                if( parentCheckBox.checked && !isChecked) {
+                    selectedData.push(d); 
+                }
+                if ( !parentCheckBox.checked && isChecked ) {
+                // remove from array if alrady in it
+                    selectedData = selectedData.filter( (i) => {
+                        return camId(i) !== camId(d) }
+                    );
+                }
+            })
+            .property("checked", parentCheckBox.checked);
+        update(selectedData);
 
     }
 
