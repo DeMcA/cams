@@ -4,7 +4,14 @@ var height = 1000;
 var dataset = [];
 
 function camId(d) {
-    return `${d.make} ${d.model} ${d.number}`;
+    let str = `${d.make}${d.model}${d.number}`.trim();
+    str = str.replace(/\s/g,'')
+    return str
+}
+
+function camClass(d) {
+    let str = d.make + d.model
+    return str.replace(/\s/g,'')
 }
 
 var selectedData = [];
@@ -31,15 +38,17 @@ d3.tsv("data/cams.csv").then( (data) => {
                 .append("input")
                 .attr("type", "checkbox")
                 .property("checked", false)
-                .attr("id", (d) => d.make + d.model )
-                .on("change", function(d) { changeMakeModelSelection("."+d.make+d.model, this); });
+                .attr("id", camId(d))
+                .on("change", function(d) { 
+                    changeMakeModelSelection("."+camClass(d), this);
+                    });
             d3.select(this)
                 .append("label")
                 .attr("for", (d,i) => camId(d) )
-                .text( (d) => camId(d) )
+                .text( (d) => `${d.make} ${d.model}`) 
                 .append("input")
                 .attr("type", "checkbox")
-                .attr("class", (d) => d.make + d.model )
+                .attr("class", camClass(d))
                 .property("checked", false)
                 .attr("id", (d) => camId(d) )
                 .on("change", function(d) { changeSelection(d, this.checked); });
