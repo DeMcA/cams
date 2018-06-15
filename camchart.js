@@ -1,15 +1,14 @@
-var width = 500;
+var width = 2000;
 var height = 1000;
 
 var dataset = [];
 
 function camId(d) {
-    let str = `${d.make}${d.model}${d.number}`.trim();
-    str = str.replace(/\s/g,'')
-    return str
+    let str = `${d.make}${d.model}${d.number}`;
+    return str.replace(/\s/g,'')
 }
 
-function camClass(d) {
+function camGroup(d) {
     let str = d.make + d.model
     return str.replace(/\s/g,'')
 }
@@ -33,22 +32,25 @@ d3.tsv("data/cams.csv").then( (data) => {
                     previousMakeModel = current;
                     return prev !== current;
                 })
-                .append("p")
+                .append("label")
+                .attr("class", "cam_group_label")
+                .attr("for", (d) => camGroup(d) )
                 .text( (d) => `${d.make} ${d.model}`)
                 .append("input")
                 .attr("type", "checkbox")
+                .attr("class", "cam_group")
                 .property("checked", false)
-                .attr("id", camId(d))
+                .attr("id", camGroup(d))
                 .on("change", function(d) { 
-                    changeMakeModelSelection("."+camClass(d), this);
+                    changeMakeModelSelection("."+camGroup(d), this);
                     });
             d3.select(this)
                 .append("label")
                 .attr("for", (d,i) => camId(d) )
-                .text( (d) => `${d.make} ${d.model}`) 
+                .text( (d) => `${d.number}`) 
                 .append("input")
                 .attr("type", "checkbox")
-                .attr("class", camClass(d))
+                .attr("class", camGroup(d) + " cam_checkbox")
                 .property("checked", false)
                 .attr("id", (d) => camId(d) )
                 .on("change", function(d) { changeSelection(d, this.checked); });
