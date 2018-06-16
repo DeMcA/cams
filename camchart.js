@@ -1434,18 +1434,23 @@ var moredata = [
 
 // http://bl.ocks.org/chucklam/f3c7b3e3709a0afd5d57 for the vaugue outline (significantly changed though)
 
+var testdata = [{"head_width": "28", "colour": "Grey", "weight": "55", "number": "000", "strength": "4", "make": "BD", "size_l": "7.8", "size_u": "12.9", "model": "Camalot C3"}, {"head_width": "28", "colour": "Purple", "weight": "57", "number": "00", "strength": "6", "make": "BD", "size_l": "9.0", "size_u": "13.7", "model": "Camalot C3"}];
+
+data =  testdata.map(parseData);
+
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
     padding = 0.3;
+
+function height() {return ((data.length +1 )* 20)} //- margin.top - margin.bottom,
 
 var chart = d3.select(".chart")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    .attr("preserveAspectRatio", "xMinYMin") // These aren't working
-    .attr("viewBox", "0 0 960 500")
-    .append("g")
+    .attr("height", height() + margin.top + margin.bottom)
+    // .attr("preserveAspectRatio", "xMinYMin") // Switch for height/width attr to get responsive
+    //.attr("viewBox", "0 0 960 " + height()) // also in update()
+    //.append("g") // won't work with update() as this nests
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var dataset = [];
 
@@ -1461,9 +1466,7 @@ function camGroup(d) {
 
 function parseData(i) {i.id = camId(i); i.size_u = +i.size_u; i.size_l = +i.size_l; return i};
 
-var testdata = [{"head_width": "28", "colour": "Grey", "weight": "55", "number": "000", "strength": "4", "make": "BD", "size_l": "7.8", "size_u": "12.9", "model": "Camalot C3"}, {"head_width": "28", "colour": "Purple", "weight": "57", "number": "00", "strength": "6", "make": "BD", "size_l": "9.0", "size_u": "13.7", "model": "Camalot C3"}];
 
-data =  testdata.map(parseData);
 //data = moredata
 
 var camIndex = 2;
@@ -1493,6 +1496,8 @@ var myXAxis = chart.append("g")
 function update(){
 
     x.domain([0, d3.max(data, (d) => d.size_u)])
+    // chart.attr("viewBox", "0 0 960 " + height.call(this))
+    chart.attr("height", height())
 
     chart.select(".x")
       .call(xAxis);
@@ -1510,6 +1515,7 @@ function update(){
     .merge(bars)
         .attr("x", (d) => x(d.size_l))
         .attr("width", (d) => x(d.size_u - d.size_l) )
+
 
     bars.exit().remove();
 }
