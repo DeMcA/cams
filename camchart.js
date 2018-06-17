@@ -1,6 +1,6 @@
 
 var moredata = [
-  {
+{
     "make": "BD",
     "model": "Camalot C3",
     "number": "000",
@@ -10,8 +10,8 @@ var moredata = [
     "head_width": 28,
     "strength": 4,
     "weight": 55
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C3",
     "number": "00",
@@ -21,8 +21,8 @@ var moredata = [
     "head_width": 28,
     "strength": 6,
     "weight": 57
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C3",
     "number": 0,
@@ -32,8 +32,8 @@ var moredata = [
     "head_width": 28,
     "strength": 7,
     "weight": 59
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C3",
     "number": 1,
@@ -43,8 +43,8 @@ var moredata = [
     "head_width": 29,
     "strength": 10,
     "weight": 62
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C3",
     "number": 2,
@@ -54,8 +54,8 @@ var moredata = [
     "head_width": 29,
     "strength": 10,
     "weight": 66
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 0.3,
@@ -65,8 +65,8 @@ var moredata = [
     "head_width": 42,
     "strength": 10,
     "weight": 71
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 0.4,
@@ -76,8 +76,8 @@ var moredata = [
     "head_width": 42,
     "strength": 10,
     "weight": 82
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 0.5,
@@ -87,8 +87,8 @@ var moredata = [
     "head_width": 45,
     "strength": 12,
     "weight": 97
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 0.75,
@@ -98,8 +98,8 @@ var moredata = [
     "head_width": 50,
     "strength": 14,
     "weight": 116
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 1,
@@ -109,8 +109,8 @@ var moredata = [
     "head_width": 52,
     "strength": 14,
     "weight": 134
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 2,
@@ -120,8 +120,8 @@ var moredata = [
     "head_width": 56,
     "strength": 14,
     "weight": 158
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 3,
@@ -131,8 +131,8 @@ var moredata = [
     "head_width": 60,
     "strength": 14,
     "weight": 201
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 4,
@@ -142,8 +142,8 @@ var moredata = [
     "head_width": 70,
     "strength": 14,
     "weight": 278
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 5,
@@ -153,8 +153,8 @@ var moredata = [
     "head_width": 80,
     "strength": 14,
     "weight": 381
-  },
-  {
+},
+{
     "make": "BD",
     "model": "Camalot C4",
     "number": 6,
@@ -164,8 +164,8 @@ var moredata = [
     "head_width": 90,
     "strength": 14,
     "weight": 557
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.1,
@@ -175,8 +175,8 @@ var moredata = [
     "head_width": 31,
     "strength": 5,
     "weight": 51
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.2,
@@ -186,8 +186,8 @@ var moredata = [
     "head_width": 31,
     "strength": 6,
     "weight": 54
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.3,
@@ -197,8 +197,8 @@ var moredata = [
     "head_width": 34,
     "strength": 8,
     "weight": 75
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.4,
@@ -208,8 +208,8 @@ var moredata = [
     "head_width": 33,
     "strength": 9,
     "weight": 82
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.5,
@@ -219,8 +219,8 @@ var moredata = [
     "head_width": 34,
     "strength": 9,
     "weight": 91
-  },
-  {
+},
+{
     "make": "BD",
     "model": "X4",
     "number": 0.75,
@@ -230,8 +230,8 @@ var moredata = [
     "head_width": 39,
     "strength": 9,
     "weight": 112
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": 1,
@@ -241,8 +241,8 @@ var moredata = [
     "head_width": 33.02,
     "strength": 10,
     "weight": 84
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": "1/2",
@@ -252,8 +252,8 @@ var moredata = [
     "head_width": 33.02,
     "strength": 7,
     "weight": 70
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": "1/3",
@@ -263,8 +263,8 @@ var moredata = [
     "head_width": 35.56,
     "strength": 5,
     "weight": 64
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": "3/4",
@@ -274,8 +274,8 @@ var moredata = [
     "head_width": 33.02,
     "strength": 9,
     "weight": 80
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": "3/8",
@@ -285,8 +285,8 @@ var moredata = [
     "head_width": 35.56,
     "strength": 6,
     "weight": 68
-  },
-  {
+},
+{
     "make": "CCH",
     "model": "Alien",
     "number": "7/8",
@@ -296,8 +296,8 @@ var moredata = [
     "head_width": 33.02,
     "strength": 10,
     "weight": 82
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 0.1255,
@@ -307,8 +307,8 @@ var moredata = [
     "head_width": 16,
     "strength": 4,
     "weight": 26
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 0.25,
@@ -318,8 +318,8 @@ var moredata = [
     "head_width": 22,
     "strength": 5,
     "weight": 26
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 0.5,
@@ -329,8 +329,8 @@ var moredata = [
     "head_width": 25,
     "strength": 9,
     "weight": 26
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 1,
@@ -340,8 +340,8 @@ var moredata = [
     "head_width": 27,
     "strength": 9,
     "weight": 35
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 1.5,
@@ -351,8 +351,8 @@ var moredata = [
     "head_width": 28,
     "strength": 14,
     "weight": 50
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 2,
@@ -362,8 +362,8 @@ var moredata = [
     "head_width": 28,
     "strength": 14,
     "weight": 55
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 2.5,
@@ -373,8 +373,8 @@ var moredata = [
     "head_width": 32,
     "strength": 17,
     "weight": 77
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 3,
@@ -384,8 +384,8 @@ var moredata = [
     "head_width": 33,
     "strength": 17,
     "weight": 90
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 3.5,
@@ -395,8 +395,8 @@ var moredata = [
     "head_width": 39,
     "strength": 17,
     "weight": 117
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 4,
@@ -406,8 +406,8 @@ var moredata = [
     "head_width": 39,
     "strength": 17,
     "weight": 138
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 5,
@@ -417,8 +417,8 @@ var moredata = [
     "head_width": 38,
     "strength": 22,
     "weight": 120
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 6,
@@ -428,8 +428,8 @@ var moredata = [
     "head_width": 49,
     "strength": 18,
     "weight": 200
-  },
-  {
+},
+{
     "make": "Camp",
     "model": "Tricam",
     "number": 7,
@@ -439,8 +439,8 @@ var moredata = [
     "head_width": 65,
     "strength": 16,
     "weight": 264
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 0,
@@ -450,8 +450,8 @@ var moredata = [
     "head_width": 42,
     "strength": 14,
     "weight": 75
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 0.5,
@@ -461,8 +461,8 @@ var moredata = [
     "head_width": 42,
     "strength": 14,
     "weight": 80
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 1,
@@ -472,8 +472,8 @@ var moredata = [
     "head_width": 48,
     "strength": 14,
     "weight": 93
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 1.25,
@@ -483,8 +483,8 @@ var moredata = [
     "head_width": 48,
     "strength": 14,
     "weight": 96
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 1.5,
@@ -494,8 +494,8 @@ var moredata = [
     "head_width": 48,
     "strength": 14,
     "weight": 97
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 1.75,
@@ -505,8 +505,8 @@ var moredata = [
     "head_width": 48,
     "strength": 14,
     "weight": 99
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 2,
@@ -516,8 +516,8 @@ var moredata = [
     "head_width": 48,
     "strength": 14,
     "weight": 110
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 2.5,
@@ -527,8 +527,8 @@ var moredata = [
     "head_width": 53,
     "strength": 14,
     "weight": 123
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 3,
@@ -538,8 +538,8 @@ var moredata = [
     "head_width": 56,
     "strength": 14,
     "weight": 151
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 3.5,
@@ -549,8 +549,8 @@ var moredata = [
     "head_width": 65,
     "strength": 14,
     "weight": 185
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "4CU",
     "number": 4,
@@ -560,8 +560,8 @@ var moredata = [
     "head_width": 65,
     "strength": 14,
     "weight": 224
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": "00",
@@ -571,8 +571,8 @@ var moredata = [
     "head_width": 39.1,
     "strength": 9,
     "weight": 75
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 0,
@@ -582,8 +582,8 @@ var moredata = [
     "head_width": 40.1,
     "strength": 12,
     "weight": 85
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 1,
@@ -593,8 +593,8 @@ var moredata = [
     "head_width": 40.2,
     "strength": 14,
     "weight": 97
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 2,
@@ -604,8 +604,8 @@ var moredata = [
     "head_width": 40.8,
     "strength": 14,
     "weight": 106
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 3,
@@ -615,8 +615,8 @@ var moredata = [
     "head_width": 42.2,
     "strength": 14,
     "weight": 119
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 4,
@@ -626,8 +626,8 @@ var moredata = [
     "head_width": 51.2,
     "strength": 14,
     "weight": 148
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 5,
@@ -637,8 +637,8 @@ var moredata = [
     "head_width": 55.4,
     "strength": 14,
     "weight": 195
-  },
-  {
+},
+{
     "make": "DMM",
     "model": "Dragon",
     "number": 6,
@@ -648,8 +648,8 @@ var moredata = [
     "head_width": 66.1,
     "strength": 14,
     "weight": 276
-  },
-  {
+},
+{
     "make": "Lowe",
     "model": "Ball Nut",
     "number": 1,
@@ -659,8 +659,8 @@ var moredata = [
     "head_width": 15,
     "strength": 8,
     "weight": 29
-  },
-  {
+},
+{
     "make": "Lowe",
     "model": "Ball Nut",
     "number": 2,
@@ -670,8 +670,8 @@ var moredata = [
     "head_width": 19,
     "strength": 8,
     "weight": 37
-  },
-  {
+},
+{
     "make": "Lowe",
     "model": "Ball Nut",
     "number": 3,
@@ -681,8 +681,8 @@ var moredata = [
     "head_width": 21,
     "strength": 8,
     "weight": 54
-  },
-  {
+},
+{
     "make": "Lowe",
     "model": "Ball Nut",
     "number": 4,
@@ -692,8 +692,8 @@ var moredata = [
     "head_width": 23,
     "strength": 8,
     "weight": 57
-  },
-  {
+},
+{
     "make": "Lowe",
     "model": "Ball Nut",
     "number": 5,
@@ -703,8 +703,8 @@ var moredata = [
     "head_width": 24,
     "strength": 8,
     "weight": 73
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": "00",
@@ -714,8 +714,8 @@ var moredata = [
     "head_width": 30,
     "strength": 5,
     "weight": 45
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 0,
@@ -725,8 +725,8 @@ var moredata = [
     "head_width": 30,
     "strength": 5,
     "weight": 45
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 1,
@@ -736,8 +736,8 @@ var moredata = [
     "head_width": 32,
     "strength": 8,
     "weight": 52
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 2,
@@ -747,8 +747,8 @@ var moredata = [
     "head_width": 32,
     "strength": 10,
     "weight": 55
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 3,
@@ -758,8 +758,8 @@ var moredata = [
     "head_width": 37,
     "strength": 10,
     "weight": 65
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 4,
@@ -769,8 +769,8 @@ var moredata = [
     "head_width": 38,
     "strength": 10,
     "weight": 75
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 5,
@@ -780,8 +780,8 @@ var moredata = [
     "head_width": 41,
     "strength": 10,
     "weight": 85
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 6,
@@ -791,8 +791,8 @@ var moredata = [
     "head_width": 42,
     "strength": 10,
     "weight": 96
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 7,
@@ -802,8 +802,8 @@ var moredata = [
     "head_width": 46,
     "strength": 10,
     "weight": 112
-  },
-  {
+},
+{
     "make": "Metolius",
     "model": "UL Master Cam",
     "number": 8,
@@ -813,8 +813,8 @@ var moredata = [
     "head_width": 46,
     "strength": 10,
     "weight": 129
-  },
-  {
+},
+{
     "make": "Omega Pacific",
     "model": "Link Cam",
     "number": 0.5,
@@ -824,8 +824,8 @@ var moredata = [
     "head_width": 46,
     "strength": 8,
     "weight": 95
-  },
-  {
+},
+{
     "make": "Omega Pacific",
     "model": "Link Cam",
     "number": 0.75,
@@ -835,8 +835,8 @@ var moredata = [
     "head_width": 48.8,
     "strength": 10,
     "weight": 113
-  },
-  {
+},
+{
     "make": "Omega Pacific",
     "model": "Link Cam",
     "number": 1,
@@ -846,8 +846,8 @@ var moredata = [
     "head_width": 55,
     "strength": 14,
     "weight": 176
-  },
-  {
+},
+{
     "make": "Omega Pacific",
     "model": "Link Cam",
     "number": 2,
@@ -857,8 +857,8 @@ var moredata = [
     "head_width": 55,
     "strength": 14,
     "weight": 207
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": 1,
@@ -868,8 +868,8 @@ var moredata = [
     "head_width": 30,
     "strength": 10,
     "weight": 61
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": "1/2",
@@ -879,8 +879,8 @@ var moredata = [
     "head_width": 29,
     "strength": 7,
     "weight": 52
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": "1/3",
@@ -890,8 +890,8 @@ var moredata = [
     "head_width": 30,
     "strength": 5,
     "weight": 46
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": "3/4",
@@ -901,8 +901,8 @@ var moredata = [
     "head_width": 29,
     "strength": 10,
     "weight": 58
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": "3/8",
@@ -912,8 +912,8 @@ var moredata = [
     "head_width": 30,
     "strength": 6,
     "weight": 48
-  },
-  {
+},
+{
     "make": "techROCK",
     "model": "Alien Evolution",
     "number": "7/8",
@@ -923,8 +923,8 @@ var moredata = [
     "head_width": 30,
     "strength": 10,
     "weight": 59
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem Basic",
     "number": 0.5,
@@ -934,8 +934,8 @@ var moredata = [
     "head_width": 33,
     "strength": 5,
     "weight": 56
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem Basic",
     "number": 0.65,
@@ -945,8 +945,8 @@ var moredata = [
     "head_width": 33,
     "strength": 7,
     "weight": 66
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem Basic",
     "number": 0.75,
@@ -956,8 +956,8 @@ var moredata = [
     "head_width": 33,
     "strength": 9,
     "weight": 73
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem Basic",
     "number": 0.95,
@@ -967,8 +967,8 @@ var moredata = [
     "head_width": 33,
     "strength": 11,
     "weight": 78
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 0.5,
@@ -978,8 +978,8 @@ var moredata = [
     "head_width": "",
     "strength": 6,
     "weight": 69
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 0.65,
@@ -989,8 +989,8 @@ var moredata = [
     "head_width": 30,
     "strength": 8,
     "weight": 75
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 0.8,
@@ -1000,8 +1000,8 @@ var moredata = [
     "head_width": 32,
     "strength": 9,
     "weight": 83
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 1,
@@ -1011,8 +1011,8 @@ var moredata = [
     "head_width": 34,
     "strength": 10,
     "weight": 95
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 1.25,
@@ -1022,8 +1022,8 @@ var moredata = [
     "head_width": 37,
     "strength": 13,
     "weight": 109
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 1.5,
@@ -1033,8 +1033,8 @@ var moredata = [
     "head_width": 41,
     "strength": 13,
     "weight": 132.5
-  },
-  {
+},
+{
     "make": "Totem",
     "model": "Totem",
     "number": 1.8,
@@ -1044,8 +1044,8 @@ var moredata = [
     "head_width": "",
     "strength": 13,
     "weight": 144
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 0,
@@ -1055,8 +1055,8 @@ var moredata = [
     "head_width": 42,
     "strength": 11,
     "weight": 87
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 0.5,
@@ -1066,8 +1066,8 @@ var moredata = [
     "head_width": 42,
     "strength": 11,
     "weight": 91
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 1,
@@ -1077,8 +1077,8 @@ var moredata = [
     "head_width": 46,
     "strength": 11,
     "weight": 98
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 1.5,
@@ -1088,8 +1088,8 @@ var moredata = [
     "head_width": 48,
     "strength": 12,
     "weight": 106
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 2,
@@ -1099,8 +1099,8 @@ var moredata = [
     "head_width": 50,
     "strength": 12,
     "weight": 111
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 2.5,
@@ -1110,8 +1110,8 @@ var moredata = [
     "head_width": 53,
     "strength": 12,
     "weight": 131
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 3,
@@ -1121,8 +1121,8 @@ var moredata = [
     "head_width": 53,
     "strength": 12,
     "weight": 145
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 3.5,
@@ -1132,8 +1132,8 @@ var moredata = [
     "head_width": 60,
     "strength": 12,
     "weight": 178
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Helium",
     "number": 4,
@@ -1143,8 +1143,8 @@ var moredata = [
     "head_width": 60,
     "strength": 12,
     "weight": 221
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 0.5,
@@ -1154,8 +1154,8 @@ var moredata = [
     "head_width": 47,
     "strength": 10,
     "weight": 98
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 0.75,
@@ -1165,8 +1165,8 @@ var moredata = [
     "head_width": 50,
     "strength": 10,
     "weight": 115
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 1,
@@ -1176,8 +1176,8 @@ var moredata = [
     "head_width": 52,
     "strength": 10,
     "weight": 134
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 2,
@@ -1187,8 +1187,8 @@ var moredata = [
     "head_width": 57,
     "strength": 10,
     "weight": 159
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 3,
@@ -1198,8 +1198,8 @@ var moredata = [
     "head_width": 60,
     "strength": 10,
     "weight": 202
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "New Friend",
     "number": 4,
@@ -1209,8 +1209,8 @@ var moredata = [
     "head_width": 75,
     "strength": 10,
     "weight": 283
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": "00",
@@ -1220,8 +1220,8 @@ var moredata = [
     "head_width": 60,
     "strength": 10,
     "weight": 60
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 0,
@@ -1231,8 +1231,8 @@ var moredata = [
     "head_width": 79,
     "strength": 14,
     "weight": 79
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 0.5,
@@ -1242,8 +1242,8 @@ var moredata = [
     "head_width": 85,
     "strength": 14,
     "weight": 85
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 1,
@@ -1253,8 +1253,8 @@ var moredata = [
     "head_width": 95,
     "strength": 14,
     "weight": 95
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 1.25,
@@ -1264,8 +1264,8 @@ var moredata = [
     "head_width": 98,
     "strength": 14,
     "weight": 98
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 1.5,
@@ -1275,8 +1275,8 @@ var moredata = [
     "head_width": 98,
     "strength": 14,
     "weight": 98
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 1.75,
@@ -1286,8 +1286,8 @@ var moredata = [
     "head_width": 107,
     "strength": 14,
     "weight": 107
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 2,
@@ -1297,8 +1297,8 @@ var moredata = [
     "head_width": 111,
     "strength": 14,
     "weight": 111
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 2.5,
@@ -1308,8 +1308,8 @@ var moredata = [
     "head_width": 122,
     "strength": 14,
     "weight": 122
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 3,
@@ -1319,8 +1319,8 @@ var moredata = [
     "head_width": 155,
     "strength": 14,
     "weight": 155
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 3.5,
@@ -1330,8 +1330,8 @@ var moredata = [
     "head_width": 178,
     "strength": 14,
     "weight": 178
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 4,
@@ -1341,8 +1341,8 @@ var moredata = [
     "head_width": 217,
     "strength": 14,
     "weight": 217
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 5,
@@ -1352,8 +1352,8 @@ var moredata = [
     "head_width": 348,
     "strength": 14,
     "weight": 339
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Technical Friend",
     "number": 6,
@@ -1363,8 +1363,8 @@ var moredata = [
     "head_width": 533,
     "strength": 14,
     "weight": 533
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 1,
@@ -1374,8 +1374,8 @@ var moredata = [
     "head_width": "",
     "strength": 3,
     "weight": 25
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 2,
@@ -1385,8 +1385,8 @@ var moredata = [
     "head_width": "",
     "strength": 4,
     "weight": 32
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 3,
@@ -1396,8 +1396,8 @@ var moredata = [
     "head_width": "",
     "strength": 6,
     "weight": 44
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 4,
@@ -1407,8 +1407,8 @@ var moredata = [
     "head_width": "",
     "strength": 6,
     "weight": 50
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 5,
@@ -1418,8 +1418,8 @@ var moredata = [
     "head_width": "",
     "strength": 9,
     "weight": 66
-  },
-  {
+},
+{
     "make": "Wildcountry",
     "model": "Zero",
     "number": 6,
@@ -1429,20 +1429,18 @@ var moredata = [
     "head_width": "",
     "strength": 9,
     "weight": 70
-  }
+}
 ]
 
-// http://bl.ocks.org/chucklam/f3c7b3e3709a0afd5d57 for the vaugue outline (significantly changed though)
-
-var testdata = [{"head_width": "28", "colour": "Grey", "weight": "55", "number": "000", "strength": "4", "make": "BD", "size_l": "7.8", "size_u": "12.9", "model": "Camalot C3"}, {"head_width": "28", "colour": "Purple", "weight": "57", "number": "00", "strength": "6", "make": "BD", "size_l": "9.0", "size_u": "13.7", "model": "Camalot C3"}];
-
-data =  testdata.map(parseData);
+var testdata = [{"head_width": 28, "colour": "Grey", "weight": 55, "number": 000, "strength": 4, "make": "BD", "size_l": 7.8, "size_u": 12.9, "model": "Camalot C3"}, {"head_width": 28, "colour": "Purple", "weight": 57, "number": 00, "strength": 6, "make": "BD", "size_l": 9.0, "size_u": 13.7, "model": "Camalot C3"}];
 
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     padding = 0.3;
 
-function height() {return ((data.length +1 )* 20)} //- margin.top - margin.bottom,
+var data  = testdata
+
+function height() { return ((this.data.length +1 )* 20)} //- margin.top - margin.bottom,
 
 var chart = d3.select(".chart")
     .attr("width", width + margin.left + margin.right)
@@ -1461,52 +1459,74 @@ function camId(d) {
 
 function camGroup(d) {
     let str = d.make + d.model
-    return str.replace(/\s/g,'')
+        return str.replace(/\s/g,'')
 }
 
-function parseData(i) {i.id = camId(i); i.size_u = +i.size_u; i.size_l = +i.size_l; return i};
-
-
-//data = moredata
-
-var camIndex = 2;
-function addToData(){
-    data.push(moredata[camIndex]);
-    camIndex++;
-    update()
-};
 
 var x = d3.scaleLinear()
     .domain([0, d3.max(data, (d) => d.size_u)])
     .range([0, width]);
 
-var y = d3.scaleLinear()
+var y = d3.scaleBand()
     .domain(d3.range(0, data.length))
-    .range([0, height]);
-    //y.domain([0, d3.max(data, (d) => d.size_u; )]);
+    .range([0, height()]);
+
+var previousMakeModel = null
+var checkboxes = d3.select("body").selectAll("label")
+    .data(moredata)
+    .enter()
+    .each( function(d) {
+        d3.select(this)
+            .filter( (d) => {
+                prev = previousMakeModel;
+                current = d.make + d.model;
+                previousMakeModel = current;
+                return prev !== current;
+            })
+            .append("label")
+                .attr("class", "cam_group_label")
+                .attr("for", (d) => camGroup(d) )
+                .text( (d) => `${d.make} ${d.model}`)
+                .append("input")
+                .attr("type", "checkbox")
+                .attr("class", "cam_group")
+                .property("checked", false)
+                .attr("id", camGroup(d))
+                .on("change", function(d) { 
+                    changeMakeModelSelection("."+camGroup(d), this);
+                });
+        d3.select(this)
+            .append("label")
+            .attr("for", (d,i) => camId(d) )
+            .text( (d) => `${d.number}`) 
+            .append("input")
+            .attr("type", "checkbox")
+            .attr("class", camGroup(d) + " cam_checkbox")
+            .property("checked", false)
+            .attr("id", (d) => camId(d) )
+            .on("change", function(d) { changeSelection(d, this.checked); });
+    });
 
 var xAxis = d3.axisBottom(x);
+//var yAxis = d3.axisLeft(y);
 
-var yAxis = d3.axisLeft(y);
-
-var myXAxis = chart.append("g")
+var theXaxis = chart.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + "0" + ")") // replace second "0" with height to place at bottom
 
-function update(){
-
+function update(data){
     x.domain([0, d3.max(data, (d) => d.size_u)])
     // chart.attr("viewBox", "0 0 960 " + height.call(this))
-    chart.attr("height", height())
+
+    this.data = data   
+    chart.attr("height", height.call(this))
 
     chart.select(".x")
-      .call(xAxis);
+        .call(xAxis);
 
     var bars = chart.selectAll("rect")
         .data(data, (d) => d.id );
 
-    bars.exit().remove() // not using yet
-    
     bars.enter().append("rect")
         .attr("fill", (d) => d.colour.toLowerCase())
         .attr("stroke", (d) => d.colour.toLowerCase())
@@ -1516,8 +1536,31 @@ function update(){
         .attr("x", (d) => x(d.size_l))
         .attr("width", (d) => x(d.size_u - d.size_l) )
 
-
     bars.exit().remove();
 }
 
-update()
+var selectedData = []
+function changeSelection(datum, isChecked) {
+    isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
+    update(selectedData);
+}
+
+function changeMakeModelSelection(makeModelClass, parentCheckBox) {
+    d3.selectAll(makeModelClass)
+        .each( function(d) {
+            let isChecked = d3.select(this).node().checked;
+            if( parentCheckBox.checked && !isChecked) {
+                selectedData.push(d); 
+            }
+            if ( !parentCheckBox.checked && isChecked ) {
+                // remove from array if alrady in it
+                selectedData = selectedData.filter( (i) => {
+                    return camId(i) !== camId(d) }
+                    );
+            }
+        })
+    .property("checked", parentCheckBox.checked);
+    update(selectedData);
+
+}
+

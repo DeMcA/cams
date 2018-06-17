@@ -1,1 +1,1 @@
-* [x] Clicking select all button on certain sets fails silently. A subset of these cams will load. Unchecking select all does not remove these => Spaces in ids
+* Very first sleect(all) box does nothing
