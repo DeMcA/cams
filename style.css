@@ -5,3 +5,13 @@
 svg {
     display: block;
 }
+
+.cam-checkboxes {
+    border: solid red;
+    flex-flow: row wrap;
+    height: 200px;
+}
+
+.cam-grouping {
+    display: inline
+}
