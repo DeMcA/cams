@@ -2,16 +2,29 @@
     display: block;
     padding: 4px 0px 0px 1px;
 }
+
+.cam_label {
+    display: inline;
+}
+
 svg {
     display: block;
 }
 
 .cam-checkboxes {
-    border: solid red;
+    border: solid blue;
     flex-flow: row wrap;
-    height: 200px;
+    display: flex;
+    height: 600px;
 }
 
 .cam-grouping {
-    display: inline
+    display: inline-block;
+    flex-wrap: nowrap;
+}
+
+.checkbox-columns {
+    flex-basis: 45%;
+    min-width: 460px;
+    display: inline-block;
 }

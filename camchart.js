@@ -16,6 +16,18 @@ var chart = d3.select(".chart")
     //.append("g") // won't work with update() as this nests
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var container = d3.select("#container")
+
+d3.select(window)
+  .on("resize", function() {
+    width = container.node().getBoundingClientRect().width;
+      console.log(width)
+    // x.range([0, width]);
+    update(data)
+      console.log(x)
+  });
+console.log("outside", width)
+
 var dataset = [];
 
 function camId(d) {
@@ -46,7 +58,7 @@ var groupcams = d3.nest()
 var checkboxDivs = d3.select(".cam-checkboxes")
     .selectAll("div")
     .data(groupcams)
-    .enter().append("div")
+    .enter().append("div").attr("class", "checkbox-columns")
     .each( function(d) {
         d3.select(this) .append("label")
             .text((d) => d.values[0].make + d.values[0].model )
@@ -64,6 +76,7 @@ var checkboxDivs = d3.select(".cam-checkboxes")
         d3.select(this).selectAll("label")
             .data((d) => d.values)
             .enter().append("label")
+                .attr("class", "cam_label")
                 .text((d) => d.number)
                 .attr("for", camId )
             .append("input")
@@ -85,6 +98,8 @@ var theXaxis = chart.append("g")
 
 function update(data){
     x.domain([0, d3.max(data, (d) => d.size_u)])
+    x.range([0, width]);
+
     // chart.attr("viewBox", "0 0 960 " + height.call(this))
 
     this.data = data   
