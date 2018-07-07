@@ -1,4 +1,4 @@
-var moredata = [
+var allcams = [
 {
     "make": "BD",
     "model": "Camalot C3",

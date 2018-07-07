@@ -1,45 +1,32 @@
-var testdata = [{"head_width": 28, "colour": "Grey", "weight": 55, "number": 000, "strength": 4, "make": "BD", "size_l": 7.8, "size_u": 12.9, "model": "Camalot C3"}, {"head_width": 28, "colour": "Purple", "weight": 57, "number": 00, "strength": 6, "make": "BD", "size_l": 9.0, "size_u": 13.7, "model": "Camalot C3"}];
-
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    padding = 0.3;
+    width = 960 - margin.left - margin.right;
+    height = margin.top + margin.bottom;
 
-var data  = testdata;
-
-function height() { return ((this.data.length +1 )* 20)} //- margin.top - margin.bottom,
+var data  = [],
+    selectedData = [];
 
 var chart = d3.select(".chart")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height() + margin.top + margin.bottom)
-    // .attr("preserveAspectRatio", "xMinYMin") // Switch for height/width attr to get responsive
-    //.attr("viewBox", "0 0 960 " + height()) // also in update()
-    //.append("g") // won't work with update() as this nests
+    .attr("height", height + margin.top + margin.bottom)
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var container = d3.select("#container")
+var container = d3.select("#container");
 
 d3.select(window)
   .on("resize", function() {
     width = container.node().getBoundingClientRect().width;
-      console.log(width)
-    // x.range([0, width]);
-    update(data)
-      console.log(x)
+    update(data);
   });
-console.log("outside", width)
-
-var dataset = [];
 
 function camId(d) {
     let str = `${d.make}${d.model}${d.number}`;
-    return str.replace(/\s/g,'')
+    return str.replace(/\s/g,'');
 }
 
 function camGroup(d) {
-    let str = d.make + d.model
+    let str = d.make + d.model;
         return str.replace(/\s/g,'').trim();
 }
-
 
 var x = d3.scaleLinear()
     .domain([0, d3.max(data, (d) => d.size_u)])
@@ -47,17 +34,15 @@ var x = d3.scaleLinear()
 
 var y = d3.scaleBand()
     .domain(d3.range(0, data.length))
-    .range([0, height()]);
+    .range([0, height]);
 
-var previousMakeModel = null
-
-var groupcams = d3.nest()
+var groupCams = d3.nest()
     .key(camGroup)
-    .entries(moredata)
+    .entries(allcams);
 
 var checkboxDivs = d3.select(".cam-checkboxes")
     .selectAll("div")
-    .data(groupcams)
+    .data(groupCams)
     .enter().append("div").attr("class", "checkbox-columns")
     .each( function(d) {
         d3.select(this) .append("label")
@@ -88,22 +73,22 @@ var checkboxDivs = d3.select(".cam-checkboxes")
                     { changeSelection(d, this.checked); });
     });
     
- 
 var xAxis = d3.axisBottom(x);
-//var yAxis = d3.axisLeft(y);
+// Might want a y-axis? probably just bounding box
+// var yAxis = d3.axisLeft(y);
 
 var theXaxis = chart.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + "0" + ")") // replace second "0" with height to place at bottom
+    .attr("transform", "translate(0," + "0" + ")");
+    // replace second "0" with height to place at bottom
 
 function update(data){
-    x.domain([0, d3.max(data, (d) => d.size_u)])
+    x.domain([0, d3.max(data, (d) => d.size_u)]);
     x.range([0, width]);
 
-    // chart.attr("viewBox", "0 0 960 " + height.call(this))
-
-    this.data = data   
-    chart.attr("height", height.call(this))
+    this.data = data;
+    height = ((this.data.length +1 )* 20 + margin.top + margin.bottom);
+    chart.attr("height", height);
 
     chart.select(".x")
         .call(xAxis);
@@ -118,18 +103,21 @@ function update(data){
         .attr("y", (d,i) => i * 20)
     .merge(bars)
         .attr("x", (d) => x(d.size_l))
-        .attr("width", (d) => x(d.size_u - d.size_l) )
+        .attr("width", (d) => x(d.size_u - d.size_l) );
 
     bars.exit().remove();
 }
 
-var selectedData = []
 function changeSelection(datum, isChecked) {
     isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
     update(selectedData);
 }
 
 function changeMakeModelSelection(makeModelClass, parentCheckBox) {
+    // If selectAll for a makeModel checkbox  [ ] -> [X] then:
+    //      * check all boxes for cams of that make & model
+    //      * add all cams that were not previously checked to selectedData
+    // If selectAll for a makeModel checkbox  [X] -> [ ] then do opposite
     d3.selectAll(makeModelClass)
         .each( function(d) {
             let isChecked = d3.select(this).node().checked;
@@ -139,12 +127,10 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
             if ( !parentCheckBox.checked && isChecked ) {
                 // remove from array if alrady in it
                 selectedData = selectedData.filter( (i) => {
-                    return camId(i) !== camId(d) }
-                    );
+                    return camId(i) !== camId(d);
+                });
             }
         })
     .property("checked", parentCheckBox.checked);
     update(selectedData);
-
 }
-
