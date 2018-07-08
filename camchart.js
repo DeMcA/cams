@@ -73,14 +73,13 @@ var checkboxDivs = d3.select(".cam-checkboxes")
                     { changeSelection(d, this.checked); });
     });
     
-var xAxis = d3.axisBottom(x);
+var xAxis = d3.axisTop(x);
 // Might want a y-axis? probably just bounding box
 // var yAxis = d3.axisLeft(y);
 
 var theXaxis = chart.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + "0" + ")");
-    // replace second "0" with height to place at bottom
+    .attr("class", "x axis");
+    // .attr("transform", "translate(0,-10)");
 
 function update(data){
     x.domain([0, d3.max(data, (d) => d.size_u)]);
@@ -100,7 +99,7 @@ function update(data){
         .attr("fill", (d) => d.colour.toLowerCase())
         .attr("stroke", (d) => d.colour.toLowerCase())
         .attr("height", 10)
-        .attr("y", (d,i) => i * 20)
+        .attr("y", (d,i) => 10 + i * 20)
     .merge(bars)
         .attr("x", (d) => x(d.size_l))
         .attr("width", (d) => x(d.size_u - d.size_l) );
