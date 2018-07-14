@@ -32,7 +32,7 @@ var x = d3.scaleLinear()
     .domain([0, d3.max(data, (d) => d.size_u)])
     .range([0, width]);
 
-var y = d3.scaleBand()
+var y = d3.scaleBand() // not being used currently
     .domain(d3.range(0, data.length))
     .range([0, height]);
 
@@ -113,10 +113,11 @@ function changeSelection(datum, isChecked) {
 }
 
 function changeMakeModelSelection(makeModelClass, parentCheckBox) {
-    // If selectAll for a makeModel checkbox  [ ] -> [X] then:
+    // If a makeModel selectAll checkbox is ticked  [ ] -> [X] then:
     //      * check all boxes for cams of that make & model
     //      * add all cams that were not previously checked to selectedData
-    // If selectAll for a makeModel checkbox  [X] -> [ ] then do opposite
+    // If a makeModel selectAll checkbox is unticked  [X] -> [ ] then:
+    //      do opposite
     d3.selectAll(makeModelClass)
         .each( function(d) {
             let isChecked = d3.select(this).node().checked;
