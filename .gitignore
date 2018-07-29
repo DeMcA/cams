@@ -1,2 +1,3 @@
+node_modules
 .jshintrc
-*.sw[op]
+dist/main.js
