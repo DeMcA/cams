@@ -50,7 +50,7 @@ var checkboxDivs = d3.select(".cam-checkboxes")
     .data(groupCams)
     .enter().append("div").attr("class", "checkbox-columns")
     .each( function(d) {
-        d3.select(this) .append("label")
+        d3.select(this).append("label")
             .text((d) => d.values[0].make + d.values[0].model )
             .attr("for", d.key)
             .attr("class", "cam_group_label")
@@ -138,7 +138,7 @@ function update(data){
         .call(xAxis);
 
     var bars = chart.selectAll("rect")
-        .data(data, camId)
+        .data(data, camId);
 
     bars.enter().append("rect")
         .attr("fill", (d) => d.colour.toLowerCase())
@@ -147,9 +147,19 @@ function update(data){
     .merge(bars)
         .attr("y", (d,i) => 10 + i * 20)
         .attr("x", (d) => x(d.size_l))
-        .attr("width", (d) => x(d.size_u - d.size_l) );
-
+        .attr("width", (d) => x(d.size_u - d.size_l));
     bars.exit().remove();
+
+    var labels = chart.selectAll("text")
+        .data(data, (d) => d.make+d.model+d.number+"label");
+
+    labels.enter().append("text")
+        .merge(labels)
+            .text((d) => `${d.make} ${d.model}, No. ${d.number}`)
+            .attr("y", (d,i) => { console.log(this); return 20 + i * 20 })
+            .attr("x", function(d) {
+                return x(d.size_l) - this.getBBox().width - 10 });
+        labels.exit().remove();
 }
 
 function changeSelection(datum, isChecked) {

@@ -14,8 +14,7 @@
 * webpack to reload webpage for development
 * Refactor/cleanup: consistent CSS classes, naming conventions, consistent style, linting?
 * Some way to remember/preselected cams (the cams I own will do initially)?
-* Labels on cams and/or y-axis
-* Select all and Select none checkboxes
+* Labels on cams could be nicer (hover over, only include make on the first occuranbce, and/or go on the y-axis. Shouls also tidy up dead y-axis code.
 * Popups/links to extra data
 * Unittests in d3?
 * Create README, include run/deploy instructions, add deploy script to packages.json?
