@@ -12,6 +12,5 @@
 * Labels on cams
 * Sort function: By size, model, model/size, (last added -> default?)
 * Select all and Select none checkboxes
-* Build/deploy process: webpack or similar? deal with separate .js file for data.
 * Popups/links to extra data
 * Unittests in d3?
