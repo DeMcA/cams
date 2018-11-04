@@ -2,22 +2,16 @@ import * as d3 from "d3";
 import allcams from "./allcams";
 
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = margin.top + margin.bottom;
 
 var data  = [],
     selectedData = [];
 
-var chart = d3.select(".chart")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 var container = d3.select("#container");
 
 d3.select(window)
   .on("resize", function() {
-    width = container.node().getBoundingClientRect().width;
     update(selectedData);
   });
 
@@ -80,11 +74,26 @@ var xAxis = d3.axisTop(x);
 // Might want a y-axis? probably just bounding box
 // var yAxis = d3.axisLeft(y);
 
+// .attr("transform", "translate(0,-10)");
+
+var chart = d3.select(".chart")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 var theXaxis = chart.append("g")
     .attr("class", "x axis");
-    // .attr("transform", "translate(0,-10)");
+
 
 function update(data){
+
+    width = container.node().getBoundingClientRect().width;
+
+    chart = d3.select(".chart")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
     x.domain([0, d3.max(data, (d) => d.size_u)]);
     x.range([0, width]);
 

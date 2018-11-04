@@ -3,9 +3,8 @@
 ## Bugs
 * Very first checkbox does not work in chromium, label is instead clickable.
     => does d3-generated nested label/checkbox layout confirm to standards or browser bug?
-* Largest cams are truncated, i.e x-axis not wide enough
-* width/height/margin definitions used inconsistently
-* Titles, layout, font, style etc. used inconsistently
+* Chart is slightly wider than or offset from container
+    => update margins, widths etc.
 
 ## Features
 * Refactor/cleanup: consistent CSS classes, naming conventions, consistent style, linting?
