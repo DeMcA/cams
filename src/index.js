@@ -1,14 +1,16 @@
 import * as d3 from "d3";
 import allcams from "./allcams";
 
-var margin = {top: 20, right: 30, bottom: 30, left: 40},
-    width = 1200 - margin.left - margin.right,
+var margin = {top: 20, right: 50, bottom: 30, left: 120},
+    containerWidth = 1200, 
     height = margin.top + margin.bottom;
+
+var width = containerWidth - margin.left - margin.right
 
 var data  = [],
     selectedData = [];
 
-var container = d3.select("#container");
+var container = d3.select("#container")
 
 d3.select(window)
   .on("resize", function() {
@@ -105,34 +107,37 @@ function sortCams(a,b) {
     }
 }
 
-var xAxis = d3.axisTop(x);
 // Might want a y-axis? probably just bounding box
 // var yAxis = d3.axisLeft(y);
 
 var chart = d3.select(".chart")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-var theXaxis = chart.append("g")
-    .attr("class", "x axis");
- // .attr("transform", "translate(0,-10)");
+    .attr("width", containerWidth)
+    .attr("height", height )
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
 function update(data){
-    selectedData.sort(sortCams)
 
-    width = container.node().getBoundingClientRect().width;
+    selectedData.sort(sortCams)
+    // Leave space for labels:
+    // (could do something better, like create a hidden element and measure its width?)
+    margin.right = (10 + d3.max(data, (d) => (d.model + d.number).length )) * 8;
+    var containerWidth = container.node().getBoundingClientRect().width;
+    var width = containerWidth - margin.left - margin.right;
+    var height = ((data.length +1 )* 20 + margin.top + margin.bottom);
 
     chart = d3.select(".chart")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("width", containerWidth)
+        .attr("height", height)
+        .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
-    x.domain([0, d3.max(data, (d) => d.size_u)]);
+    x.domain([0, d3.max(data, (d) => d.size_u)])
     x.range([0, width]);
 
-    height = ((data.length +1 )* 20 + margin.top + margin.bottom);
-    chart.attr("height", height);
+    var xAxis = d3.axisTop(x)
+
+    var theXaxis = chart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0,-10)");
 
     chart.select(".x")
         .call(xAxis);
@@ -155,11 +160,12 @@ function update(data){
 
     labels.enter().append("text")
         .merge(labels)
-            .text((d) => `${d.make} ${d.model}, No. ${d.number}`)
-            .attr("y", (d,i) => { console.log(this); return 20 + i * 20 })
+            .text((d) => `${d.model}, No. ${d.number}`)
+            .attr("y", (d,i) => { return 20 + i * 20 })
             .attr("x", function(d) {
-                return x(d.size_l) - this.getBBox().width - 10 });
-        labels.exit().remove();
+                return x(d.size_u) + 5
+                }); 
+    labels.exit().remove();
 }
 
 function changeSelection(datum, isChecked) {
@@ -193,7 +199,6 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
         })
     .property("checked", parentCheckBox.checked);
     update(selectedData);
-
 }
 
 /**
