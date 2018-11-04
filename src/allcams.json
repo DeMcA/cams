@@ -244,17 +244,6 @@
 {
     "make": "CCH",
     "model": "Alien",
-    "number": "1/2",
-    "colour": "green",
-    "size_l": 13,
-    "size_u": 22,
-    "head_width": 33.02,
-    "strength": 7,
-    "weight": 70
-},
-{
-    "make": "CCH",
-    "model": "Alien",
     "number": "1/3",
     "colour": "black",
     "size_l": 8,
@@ -266,17 +255,6 @@
 {
     "make": "CCH",
     "model": "Alien",
-    "number": "3/4",
-    "colour": "yellow",
-    "size_l": 15,
-    "size_u": 25,
-    "head_width": 33.02,
-    "strength": 9,
-    "weight": 80
-},
-{
-    "make": "CCH",
-    "model": "Alien",
     "number": "3/8",
     "colour": "blue",
     "size_l": 10,
@@ -284,6 +262,28 @@
     "head_width": 35.56,
     "strength": 6,
     "weight": 68
+},
+{
+    "make": "CCH",
+    "model": "Alien",
+    "number": "1/2",
+    "colour": "green",
+    "size_l": 13,
+    "size_u": 22,
+    "head_width": 33.02,
+    "strength": 7,
+    "weight": 70
+},
+{
+    "make": "CCH",
+    "model": "Alien",
+    "number": "3/4",
+    "colour": "yellow",
+    "size_l": 15,
+    "size_u": 25,
+    "head_width": 33.02,
+    "strength": 9,
+    "weight": 80
 },
 {
     "make": "CCH",
@@ -871,17 +871,6 @@
 {
     "make": "techROCK",
     "model": "Alien Evolution",
-    "number": "1/2",
-    "colour": "green",
-    "size_l": 13,
-    "size_u": 22,
-    "head_width": 29,
-    "strength": 7,
-    "weight": 52
-},
-{
-    "make": "techROCK",
-    "model": "Alien Evolution",
     "number": "1/3",
     "colour": "black",
     "size_l": 8,
@@ -893,17 +882,6 @@
 {
     "make": "techROCK",
     "model": "Alien Evolution",
-    "number": "3/4",
-    "colour": "yellow",
-    "size_l": 15,
-    "size_u": 25,
-    "head_width": 29,
-    "strength": 10,
-    "weight": 58
-},
-{
-    "make": "techROCK",
-    "model": "Alien Evolution",
     "number": "3/8",
     "colour": "blue",
     "size_l": 10,
@@ -911,6 +889,28 @@
     "head_width": 30,
     "strength": 6,
     "weight": 48
+},
+{
+    "make": "techROCK",
+    "model": "Alien Evolution",
+    "number": "1/2",
+    "colour": "green",
+    "size_l": 13,
+    "size_u": 22,
+    "head_width": 29,
+    "strength": 7,
+    "weight": 52
+},
+{
+    "make": "techROCK",
+    "model": "Alien Evolution",
+    "number": "3/4",
+    "colour": "yellow",
+    "size_l": 15,
+    "size_u": 25,
+    "head_width": 29,
+    "strength": 10,
+    "weight": 58
 },
 {
     "make": "techROCK",

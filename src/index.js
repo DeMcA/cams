@@ -69,12 +69,37 @@ var checkboxDivs = d3.select(".cam-checkboxes")
                 .on("change", function(d)
                     { changeSelection(d, this.checked); });
     });
+
+var buttons = ["size_u", "model"]
+var form = d3.select(".sort-radiobuttons").append("form");
+var sortMethod = "model"
+var labels = form.selectAll("label")
+    .data(buttons)
+    .enter()
+    .append("label")
+    .text((d) => d)
+    .append("input")
+    .attr("type", "radio")
+    .attr("name", "sortbutton")
+    .attr("value", (d) => d )
+    .property("checked", (d) => d === sortMethod )
+    .on("change", () => update(selectedData))
     
+function sortCams(a,b) {
+    sortMethod = d3.select('input[name="sortbutton"]:checked').node().value
+    if (sortMethod === "size_u") {
+        return a.size_u - b.size_u
+    }
+    else if (sortMethod === "model") {
+        if (a.make+a.model < b.make+b.model) {return 1}
+        if (a.make+a.model >  b.make+b.model) {return -1}
+        return 0
+    }
+}
+
 var xAxis = d3.axisTop(x);
 // Might want a y-axis? probably just bounding box
 // var yAxis = d3.axisLeft(y);
-
-// .attr("transform", "translate(0,-10)");
 
 var chart = d3.select(".chart")
     .attr("width", width + margin.left + margin.right)
@@ -83,9 +108,10 @@ var chart = d3.select(".chart")
 
 var theXaxis = chart.append("g")
     .attr("class", "x axis");
-
+ // .attr("transform", "translate(0,-10)");
 
 function update(data){
+    selectedData.sort(sortCams)
 
     width = container.node().getBoundingClientRect().width;
 
@@ -104,14 +130,14 @@ function update(data){
         .call(xAxis);
 
     var bars = chart.selectAll("rect")
-        .data(data, (d) => d.id );
+        .data(data, camId)
 
     bars.enter().append("rect")
         .attr("fill", (d) => d.colour.toLowerCase())
         .attr("stroke", (d) => d.colour.toLowerCase())
         .attr("height", 10)
-        .attr("y", (d,i) => 10 + i * 20)
     .merge(bars)
+        .attr("y", (d,i) => 10 + i * 20)
         .attr("x", (d) => x(d.size_l))
         .attr("width", (d) => x(d.size_u - d.size_l) );
 
