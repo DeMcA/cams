@@ -10,11 +10,14 @@
     => update() not called initally. Can just have some/all pre-selected
 
 ## Features
+* host on github pages?
+* webpack to reload webpage for development
 * Refactor/cleanup: consistent CSS classes, naming conventions, consistent style, linting?
 * Some way to remember/preselected cams (the cams I own will do initially)?
 * Labels on cams and/or y-axis
 * Select all and Select none checkboxes
 * Popups/links to extra data
 * Unittests in d3?
+* Create README, include run/deploy instructions, add deploy script to packages.json?
 * More data, there's plenty more cams out now.
   Also deal with multipe versions of a cam that remain same size (e.g. new dragons might be same cam size as old but different weight etc.)

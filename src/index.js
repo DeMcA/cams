@@ -37,6 +37,14 @@ var groupCams = d3.nest()
     .key(camGroup)
     .entries(allcams);
 
+var selectAllDiv = d3.select(".selectall-wrapper")
+    .append("label").attr("for", "selectall-checkbox").text("Select All")
+    .append("input")
+        .attr("type", "checkbox")
+        .attr("id", "selectall-checkbox")
+        .property("checked", false)
+        .on("change", changeAllSelection)
+
 var checkboxDivs = d3.select(".cam-checkboxes")
     .selectAll("div")
     .data(groupCams)
@@ -145,6 +153,11 @@ function update(data){
 }
 
 function changeSelection(datum, isChecked) {
+    // First, uncheck the selectAll check box since we're picking boxes individually
+    // Could do something more sophisticated like check whether all boxes are ticked but this will do
+    // (Same thing won't work for changeMakeModelSelection, since it is called by changeAllSelection)
+    d3.select(".selectall-wrapper").select("input").property("checked", false);
+    // Now adjust selectedData and update:
     isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
     update(selectedData);
 }
@@ -170,4 +183,23 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
         })
     .property("checked", parentCheckBox.checked);
     update(selectedData);
+
+}
+
+/**
+ * Sets every makeModel checkbox to the same state
+ * Since changeMakeModelSelection sets each of its child checkboxes, every checkbox on the page should be set here.
+ * Essentially, select/deselect all.
+ */
+function changeAllSelection() {
+    var checkbox = {}
+    checkbox.checked = d3.select(this).node().checked
+    var selectall = {checked: true}
+    d3.selectAll(".cam_group")
+        .each( function(d) {
+            // changeMakeModelSelection expects and object with "checked" property
+            // but I can't use this directly(?)
+            changeMakeModelSelection("."+d.key, checkbox) 
+        })
+    .property("checked", checkbox.checked);
 }

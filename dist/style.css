@@ -14,6 +14,11 @@ svg {
 .sort-radiobuttons {
     height: 100px;
 }
+
+.selectall-checkbox {
+    height: 50px;
+}
+
 .cam-checkboxes {
     border: solid blue;
     flex-flow: row wrap;
