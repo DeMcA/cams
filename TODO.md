@@ -9,15 +9,13 @@
 
 ## Features
 * Bounding box for chart?
-* Vertical grid vs ticks on axis?
 * Units and unit selector (convert between inches/mm?)
 * Colour numbers in  checkboxes?
 * Consistent colours, check all cam colours are standard css/html colours and add lookup or similar if not
-* Better/consistent spacing, especially vertical spacing.
 * host on github pages?
 * Refactor/cleanup: consistent CSS classes, naming conventions, consistent style, linting?
 * Some way to remember/preselected cams (the cams I own will do initially)?
-* Labels on cams could be nicer (hover over, only include make on the first occurrence, and/or go on the y-axis. Should also tidy up dead y-axis code.
+* Labels on cams could be nicer (hover over, only include make on the first occurrence, and/or go on the y-axis.
 * Popups/links to extra data
 * Unittests in d3?
 * Create README, include run/deploy instructions, add deploy script to packages.json?

@@ -9,14 +9,14 @@
 
 svg {
     display: block;
+    margin-bottom: 20px;
 }
 
 .sort-radiobuttons {
-    height: 100px;
+    margin-bottom: 20px;
 }
 
 .selectall-checkbox {
-    height: 50px;
 }
 
 .cam-checkboxes {

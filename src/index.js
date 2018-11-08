@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import allcams from "./allcams";
 
-var margin = {top: 40, right: 50, bottom: 30, left: 120},
+var margin = {top: 40, right: 50, bottom: 10, left: 120},
     containerWidth = 1200, 
     height = margin.top + margin.bottom;
 
@@ -31,9 +31,9 @@ var x = d3.scaleLinear()
     .domain([0, d3.max(data, (d) => d.size_u)])
     .range([0, width]);
 
-var y = d3.scaleBand() // not being used currently
-    .domain(d3.range(0, data.length))
-    .range([0, height]);
+var x1 = d3.scaleLinear()
+    .domain([0, d3.max(data, (d) => d.size_u)])
+    .range([0, width]);
 
 var groupCams = d3.nest()
     .key(camGroup)
@@ -107,13 +107,16 @@ function sortCams(a,b) {
     }
 }
 
-// Might want a y-axis? probably just bounding box
-// var yAxis = d3.axisLeft(y);
-
 var chart = d3.select(".chart")
     .attr("width", containerWidth)
     .attr("height", height )
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
+
+chart.append("g")
+    .attr("class", "x axis upper")
+
+chart.append("g").attr("class", "x axis lower")
+    .attr("transform", `translate(0, ${height})`) 
 
 function update(data){
 
@@ -132,15 +135,32 @@ function update(data){
 
     x.domain([0, d3.max(data, (d) => d.size_u)])
     x.range([0, width]);
+    x1.domain([0, d3.max(data, (d) => d.size_u)])
+    x1.range([0, width]);
 
-    var xAxis = d3.axisTop(x)
+    var xAxis = d3.axisTop(x).ticks()// .tickSizeOuter([0]) // does nothing?
+    var xAxisLower = d3.axisBottom(x1).ticks() // has to be a second axis
 
-    var theXaxis = chart.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0,-20)");
+    chart.select(".x.upper").call(xAxis);
+    chart.select(".x.lower").call(xAxisLower)
+    .attr("transform", `translate(0, ${height - 60})`) ; // TODO: get right translate
 
-    chart.select(".x")
-        .call(xAxis);
+    // Bit of a hack, splice returns the deleted array
+    var gridLines = chart.selectAll("line.horizontalGrid").data(x.ticks().splice(1,99), (d) =>  d);
+
+    gridLines.enter() .append("line")
+        .attr("class", "horizontalGrid")
+        .attr("fill" , "none")
+        // .attr("shape-rendering" , "crispEdges")
+        .attr("stroke" , "lightgray")
+        .attr("stroke-dasharray" , "10,10")
+        .attr("stroke-width" , "1px")
+    .merge(gridLines)
+        .attr("y1" , 0)
+        .attr("y2" , height - 5)
+        .attr("x1" , (d) => x(d) + 0.5) // Don't know why the tick marks get shifted across by 0.5
+        .attr("x2" , (d) => x(d) + 0.5);
+    gridLines.exit().remove();
 
     var bars = chart.selectAll("rect")
         .data(data, camId);
