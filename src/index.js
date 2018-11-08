@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import allcams from "./allcams";
 
-var margin = {top: 20, right: 50, bottom: 30, left: 120},
+var margin = {top: 40, right: 50, bottom: 30, left: 120},
     containerWidth = 1200, 
     height = margin.top + margin.bottom;
 
@@ -137,7 +137,7 @@ function update(data){
 
     var theXaxis = chart.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0,-10)");
+        .attr("transform", "translate(0,-20)");
 
     chart.select(".x")
         .call(xAxis);
@@ -155,10 +155,10 @@ function update(data){
         .attr("width", (d) => x(d.size_u - d.size_l));
     bars.exit().remove();
 
-    var labels = chart.selectAll("text")
+    var labels = chart.selectAll("text.cam-label")
         .data(data, (d) => d.make+d.model+d.number+"label");
 
-    labels.enter().append("text")
+    labels.enter().append("text").attr("class", "cam-label")
         .merge(labels)
             .text((d) => `${d.model}, No. ${d.number}`)
             .attr("y", (d,i) => { return 20 + i * 20 })
