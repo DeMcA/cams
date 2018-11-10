@@ -80,11 +80,36 @@ var checkboxDivs = d3.select(".cam-checkboxes")
                     { changeSelection(d, this.checked); });
     });
 
-var buttons = ["size_u", "model"]
+var sortMethods = ["size_u", "model"]
 var form = d3.select(".sort-radiobuttons").append("form");
+
+window.setLocalCamStorage = function(){
+    localStorage.setItem('selectedCams', JSON.stringify(selectedData))
+}
+
+/*
+ * Get cams from local storage, tick boxes for those cams and update global selectedData.
+ *
+ * Bid of a dodgey, side-effect-laden function.
+ * Also fails to update camGroup select-all box as appropriate.
+ */
+function getLocalCamStorage() { 
+    const cams = JSON.parse(localStorage.getItem('selectedCams'));
+    if ( !cams ) return null
+    selectedData = cams
+    const camIds = cams.map(camId)
+    // not using d3.selectAll.filter, since camIds not available in scope
+    camIds.forEach((d) => {
+        // Can't just select for #id as d3 fails on periods etc.
+        // Check d3 is happy with slashes in id.
+        d3.select(`input[id='${d}']`).property("checked", true)
+    })
+    return cams 
+}
+
 var sortMethod = "model"
 var labels = form.selectAll("label")
-    .data(buttons)
+    .data(sortMethods)
     .enter()
     .append("label")
     .text((d) => d)
@@ -93,8 +118,10 @@ var labels = form.selectAll("label")
     .attr("name", "sortbutton")
     .attr("value", (d) => d )
     .property("checked", (d) => d === sortMethod )
-    .on("change", () => update(selectedData))
+    .on("change", () => update(selectedData.sort(sortCams)))
+    .on("click", () => update(selectedData.sort(sortCams)))
     
+/* Method called by sort, not the sort function itself */
 function sortCams(a,b) {
     sortMethod = d3.select('input[name="sortbutton"]:checked').node().value
     if (sortMethod === "size_u") {
@@ -107,6 +134,7 @@ function sortCams(a,b) {
     }
 }
 
+// TODO: don't need this here if initialising  with update() ?
 var chart = d3.select(".chart")
     .attr("width", containerWidth)
     .attr("height", height )
@@ -118,9 +146,17 @@ chart.append("g")
 chart.append("g").attr("class", "x axis lower")
     .attr("transform", `translate(0, ${height})`) 
 
+
+/**
+ * Main update function, to be called whenever global selectedData array or page view is updated
+ *
+ * Used for updating chart object with new data or window dimensions.
+ * Does not touch selectedData itself.
+*/
 function update(data){
 
-    selectedData.sort(sortCams)
+    data = data || getLocalCamStorage() || []
+
     // Leave space for labels:
     // (could do something better, like create a hidden element and measure its width?)
     margin.right = (10 + d3.max(data, (d) => (d.model + d.number).length )) * 8;
@@ -143,9 +179,9 @@ function update(data){
 
     chart.select(".x.upper").call(xAxis);
     chart.select(".x.lower").call(xAxisLower)
-    .attr("transform", `translate(0, ${height - 60})`) ; // TODO: get right translate
+    .attr("transform", `translate(0, ${height - 60})`);
 
-    // Bit of a hack, splice returns the deleted array
+    // Bit of a hack, splice returns the deleted array. Assumes less than 98 ticks...
     var gridLines = chart.selectAll("line.horizontalGrid").data(x.ticks().splice(1,99), (d) =>  d);
 
     gridLines.enter() .append("line")
@@ -238,3 +274,6 @@ function changeAllSelection() {
         })
     .property("checked", checkbox.checked);
 }
+
+// Inital load of chart. update() will search in local storage initially
+d3.select(window).on("load", update)

@@ -20,10 +20,9 @@ svg {
 }
 
 .cam-checkboxes {
-    border: solid blue;
     flex-flow: row wrap;
     display: flex;
-    height: 600px;
+    /* height: 600px; */
 }
 
 .cam-grouping {
