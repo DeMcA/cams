@@ -95,10 +95,11 @@ window.setLocalCamStorage = function(){
  */
 function getLocalCamStorage() { 
     const cams = JSON.parse(localStorage.getItem('selectedCams'));
-    if ( !cams ) return null
+    if (!cams) return null
     selectedData = cams
     const camIds = cams.map(camId)
-    // not using d3.selectAll.filter, since camIds not available in scope
+    // Not using d3.selectAll.filter, since camIds not available in scope
+    // Presumably, there is a nce way to do it in d3, though?
     camIds.forEach((d) => {
         // Can't just select for #id as d3 fails on periods etc.
         // Check d3 is happy with slashes in id.
@@ -107,7 +108,18 @@ function getLocalCamStorage() {
     return cams 
 }
 
-var sortMethod = "model"
+/** Deselect all cams and load from local storage */
+window.loadCams = function() {
+    d3.selectAll("input").property("checked", false)
+    update()
+}
+window.clearCams = function() {
+    d3.selectAll("input").property("checked", false)
+    selectedData = []
+    update(selectedData)
+}
+
+var sortMethod
 var labels = form.selectAll("label")
     .data(sortMethods)
     .enter()
@@ -117,11 +129,11 @@ var labels = form.selectAll("label")
     .attr("type", "radio")
     .attr("name", "sortbutton")
     .attr("value", (d) => d )
-    .property("checked", (d) => d === sortMethod )
+    .property("checked", (d) => sortMethod && d === sortMethod )
     .on("change", () => update(selectedData.sort(sortCams)))
     .on("click", () => update(selectedData.sort(sortCams)))
     
-/* Method called by sort, not the sort function itself */
+/** Method called by sort, not the sort function itself */
 function sortCams(a,b) {
     sortMethod = d3.select('input[name="sortbutton"]:checked').node().value
     if (sortMethod === "size_u") {
@@ -240,6 +252,7 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
     //      * add all cams that were not previously checked to selectedData
     // If a makeModel selectAll checkbox is unticked  [X] -> [ ] then:
     //      do opposite
+    console.log(selectedData)
     d3.selectAll(makeModelClass)
         .each( function(d) {
             let isChecked = d3.select(this).node().checked;
@@ -260,7 +273,9 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
 /**
  * Sets every makeModel checkbox to the same state
  * Since changeMakeModelSelection sets each of its child checkboxes, every checkbox on the page should be set here.
- * Essentially, select/deselect all.
+ * Essentially, select/deselect all. 
+ * TODO: can doubtless simplify and/or split out functionality. Also, wasn't his meant to toggle, 
+ * i.e remember the selectedData when unselected. Clean this up anyway.
  */
 function changeAllSelection() {
     var checkbox = {}

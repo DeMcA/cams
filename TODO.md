@@ -11,6 +11,7 @@
 * ticks marks(?) vissible when no cams selected
 
 ## Features
+* Select None button
 * Decide on sorting behaviour, really want to require a click? Maybe as an option?
 * Bounding box for chart?
 * Units and unit selector (convert between inches/mm?)

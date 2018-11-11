@@ -7,11 +7,12 @@
   </head>
   <body>
     <h1>Cam Chart</h1>
-    <div id="container" width="100%">
-      <svg class="chart" ></svg>
-    </div>
-    <div class="save-button">
+    <div class="data-button">
       <button type="button" onclick="setLocalCamStorage()">Save Selection</button>
+      <button type="button" onclick="loadCams()">Load Selection</button>
+      <button type="button" onclick="clearCams()">Clear Selection</button>
+    </div> <div id="container" width="100%">
+      <svg class="chart" ></svg>
     </div>
     <h2>Sort method:</h2>
     <div class="sort-radiobuttons"></div>
