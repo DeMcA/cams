@@ -237,7 +237,15 @@ function update(data){
     .merge(bars)
         .attr("y", (d,i) => 10 + i * 20)
         .attr("x", (d) => x(d.size_l))
-        .attr("width", (d) => x(d.size_u - d.size_l));
+        .attr("width", (d) => x(d.size_u - d.size_l))
+       .append("svg:title")
+            // TODO: add check for empty data and/or do this better
+           .text((d) => {
+           return `${d.make} ${d.model} - No. ${d.number}\n
+           weight: ${d.weight} g
+           head wdith: ${d.head_width} mm
+           strenght: ${d.strength} kN
+           `; });
     bars.exit().remove();
 
     var labels = chart.selectAll("text.cam-label")

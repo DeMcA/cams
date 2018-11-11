@@ -3,3 +3,4 @@
 ### Added
 * Select None button
 * X-axis label
+* Rudimentary tooltips via svg:title
