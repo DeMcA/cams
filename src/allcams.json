@@ -1428,5 +1428,71 @@
     "head_width": "",
     "strength": 9,
     "weight": 70
+},
+{
+    "size_l": "7.4",
+    "model": "Dragonfly",
+    "size_u": "11",
+    "make": "DMM",
+    "colour": "Green",
+    "weight": "51",
+    "strength": "5",
+    "head_width": "",
+    "number": "1"
+},
+{
+    "size_l": "8.7",
+    "model": "Dragonfly",
+    "size_u": "12.9",
+    "make": "DMM",
+    "colour": "Red",
+    "weight": "52",
+    "strength": "6",
+    "head_width": "",
+    "number": "2"
+},
+{
+    "size_l": "15.2",
+    "model": "Dragonfly",
+    "size_u": "",
+    "make": "DMM",
+    "colour": "Gold",
+    "weight": "53",
+    "strength": "10.2",
+    "head_width": "",
+    "number": "3"
+},
+{
+    "size_l": "17.9",
+    "model": "Dragonfly",
+    "size_u": "",
+    "make": "DMM",
+    "colour": "Blue",
+    "weight": "63",
+    "strength": "12.1",
+    "head_width": "",
+    "number": "4"
+},
+{
+    "size_l": "15.1",
+    "model": "Dragonfly",
+    "size_u": "22.5",
+    "make": "DMM",
+    "colour": "Silver",
+    "weight": "66",
+    "strength": "10",
+    "head_width": "",
+    "number": "5"
+},
+{
+    "size_l": "19",
+    "model": "Dragonfly",
+    "size_u": "28.3",
+    "make": "DMM",
+    "colour": "Purple",
+    "weight": "69",
+    "strength": "10",
+    "head_width": "",
+    "number": "6"
 }
 ]
