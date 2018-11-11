@@ -39,6 +39,7 @@ var groupCams = d3.nest()
     .key(camGroup)
     .entries(allcams);
 
+
 var selectAllDiv = d3.select(".selectall-wrapper")
     .append("label").attr("for", "selectall-checkbox").text("Select All")
     .append("input")
@@ -65,7 +66,7 @@ var checkboxDivs = d3.select(".cam-checkboxes")
                 changeMakeModelSelection("."+d.key, this);
             });
 
-        d3.select(this).selectAll("label")
+        d3.select(this).selectAll("label.cam_label")
             .data((d) => d.values)
             .enter().append("label")
                 .attr("class", "cam_label")

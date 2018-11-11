@@ -35,3 +35,7 @@ svg {
     min-width: 460px;
     display: inline-block;
 }
+
+.data-buttons {
+    margin-bottom: 12px;
+}

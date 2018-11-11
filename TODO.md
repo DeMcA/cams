@@ -1,9 +1,8 @@
 # TODO.md
 
 ## Bugs
-* Very first checkbox does not work in chromium, label is instead clickable.
+* Very first checkbox does not work in chromium, label is still clickable.
     => does d3-generated nested label/checkbox layout confirm to standards or browser bug?
-* Red Alien cams not being displayed
 * Lower axis is still present (but not visible) when data is empty
     => decide how to manage zero length array of cams in general
 
