@@ -152,6 +152,14 @@ var chart = d3.select(".chart")
     .attr("height", height )
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
+chart.append("text")
+    .attr("transform", `translate(
+        ${width/2}, ${-10 - margin.top/2})`
+    )
+    .style("text-anchor", "middle")
+    .attr("class", "axis-label")
+    .text("Range (mm)");
+
 chart.append("g")
     .attr("class", "x axis upper")
 
@@ -164,14 +172,14 @@ chart.append("g").attr("class", "x axis lower")
  *
  * Used for updating chart object with new data or window dimensions.
  * Does not touch selectedData itself.
-*/
+ * Should really break this down.
+ */
 function update(data){
-
     data = data || getLocalCamStorage() || []
 
     // Leave space for labels:
     // (could do something better, like create a hidden element and measure its width?)
-    margin.right = (10 + d3.max(data, (d) => (d.model + d.number).length )) * 8;
+    margin.right = (10 + d3.max(data, (d) => (d.model + d.number).length)) * 8;
     var containerWidth = container.node().getBoundingClientRect().width;
     var width = containerWidth - margin.left - margin.right;
     var height = ((data.length +1 )* 20 + margin.top + margin.bottom);
@@ -182,19 +190,28 @@ function update(data){
         .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
     x.domain([0, d3.max(data, (d) => d.size_u)])
-    x.range([0, width]);
+        .range([0, width]);
     x1.domain([0, d3.max(data, (d) => d.size_u)])
-    x1.range([0, width]);
+        .range([0, width]);
 
-    var xAxis = d3.axisTop(x).ticks()// .tickSizeOuter([0]) // does nothing?
+    var xAxis = d3.axisTop(x)//.ticks()// .tickSizeOuter([0]) // does nothing?
     var xAxisLower = d3.axisBottom(x1).ticks() // has to be a second axis
 
-    chart.select(".x.upper").call(xAxis);
-    chart.select(".x.lower").call(xAxisLower)
-    .attr("transform", `translate(0, ${height - 60})`);
+    // Don't bother moving axis about when there's no data
+    if (data.length > 0) {
+        chart.select(".axis-label")
+            .attr("transform", `translate( ${width/2}, ${-10 - margin.top/2})`)
 
-    // Bit of a hack, splice returns the deleted array. Assumes less than 98 ticks...
-    var gridLines = chart.selectAll("line.horizontalGrid").data(x.ticks().splice(1,99), (d) =>  d);
+        chart.select(".x.upper").call(xAxis);
+        chart.select(".x.lower").call(xAxisLower)
+        .attr("transform", `translate(0, ${height - 60})`);
+    } 
+    // else  {} // Could set display: none and then re-enable when data is present
+
+    // To remove first gridline at 0
+    // Bit of a hack, splice returns the deleted array, which is used for data binding
+    var gridLines = chart.selectAll("line.horizontalGrid")
+        .data(x.ticks().splice(1, x.ticks().length), (d) => d);
 
     gridLines.enter() .append("line")
         .attr("class", "horizontalGrid")
@@ -224,7 +241,7 @@ function update(data){
     bars.exit().remove();
 
     var labels = chart.selectAll("text.cam-label")
-        .data(data, (d) => d.make+d.model+d.number+"label");
+        .data(data, (d) => d.make+d.model+d.number+"label"); // Wouldn't it have been sensible to put and id in the data
 
     labels.enter().append("text").attr("class", "cam-label")
         .merge(labels)
@@ -242,7 +259,11 @@ function changeSelection(datum, isChecked) {
     // (Same thing won't work for changeMakeModelSelection, since it is called by changeAllSelection)
     d3.select(".selectall-wrapper").select("input").property("checked", false);
     // Now adjust selectedData and update:
-    isChecked ? selectedData.push(datum) : selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
+    if (isChecked) {
+        selectedData.push(datum)
+    } else {
+        selectedData = selectedData.filter( (i) => camId(i) !== camId(datum) );
+    }
     update(selectedData);
 }
 
@@ -252,7 +273,6 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
     //      * add all cams that were not previously checked to selectedData
     // If a makeModel selectAll checkbox is unticked  [X] -> [ ] then:
     //      do opposite
-    console.log(selectedData)
     d3.selectAll(makeModelClass)
         .each( function(d) {
             let isChecked = d3.select(this).node().checked;
@@ -280,7 +300,7 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
 function changeAllSelection() {
     var checkbox = {}
     checkbox.checked = d3.select(this).node().checked
-    var selectall = {checked: true}
+    // var selectall = {checked: true}
     d3.selectAll(".cam_group")
         .each( function(d) {
             // changeMakeModelSelection expects and object with "checked" property
