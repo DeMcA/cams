@@ -1452,9 +1452,9 @@
     "number": "2"
 },
 {
-    "size_l": "15.2",
+    "size_l": "10.2",
     "model": "Dragonfly",
-    "size_u": "",
+    "size_u": "15.2",
     "make": "DMM",
     "colour": "Gold",
     "weight": "53",
@@ -1463,9 +1463,9 @@
     "number": "3"
 },
 {
-    "size_l": "17.9",
+    "size_l": "12.1",
     "model": "Dragonfly",
-    "size_u": "",
+    "size_u": "17.9",
     "make": "DMM",
     "colour": "Blue",
     "weight": "63",
