@@ -53,7 +53,7 @@ var checkboxDivs = d3.select(".cam-checkboxes")
     .enter().append("div").attr("class", "checkbox-columns")
     .each( function(d) {
         d3.select(this).append("label")
-            .text((d) => d.values[0].make + d.values[0].model )
+            .text((d) => d.values[0].make + " " + d.values[0].model )
             .attr("for", d.key)
             .attr("class", "cam_group_label")
         .append("input")
