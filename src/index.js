@@ -5,42 +5,32 @@ var margin = {top: 40, right: 50, bottom: 10, left: 120},
     containerWidth = 1200, 
     height = margin.top + margin.bottom;
 
-var width = containerWidth - margin.left - margin.right
-
-var data  = [],
-    selectedData = [];
-
-var container = d3.select("#container")
+var width = containerWidth - margin.left - margin.right;
+var selectedData = [];
+var container = d3.select("#container");
 
 d3.select(window)
-  .on("resize", function() {
-    update(selectedData);
-  });
+  .on("resize", () => update(selectedData));
 
+/** unique identifier for each cam */
 function camId(d) {
     let str = `${d.make}${d.model}${d.number}`;
-    return str.replace(/\s/g,'');
+    return str.replace(/\s/g,'').trim();
 }
 
+/** unique identifier for each make-model set of cams */
 function camGroup(d) {
     let str = d.make + d.model;
-        return str.replace(/\s/g,'').trim();
+    return str.replace(/\s/g,'').trim();
 }
 
-var x = d3.scaleLinear()
-    .domain([0, d3.max(data, (d) => d.size_u)])
-    .range([0, width]);
-
-var x1 = d3.scaleLinear()
-    .domain([0, d3.max(data, (d) => d.size_u)])
-    .range([0, width]);
-
+// group cams according to each make-model set
 var groupCams = d3.nest()
     .key(camGroup)
     .entries(allcams);
 
-
-var selectAllDiv = d3.select(".selectall-wrapper")
+// Setup check-boxes
+d3.select(".selectall-wrapper")
     .append("label").attr("for", "selectall-checkbox").text("Select All")
     .append("input")
         .attr("type", "checkbox")
@@ -48,7 +38,7 @@ var selectAllDiv = d3.select(".selectall-wrapper")
         .property("checked", false)
         .on("change", changeAllSelection)
 
-var checkboxDivs = d3.select(".cam-checkboxes")
+d3.select(".cam-checkboxes")
     .selectAll("div")
     .data(groupCams)
     .enter().append("div").attr("class", "checkbox-columns")
@@ -84,6 +74,20 @@ var checkboxDivs = d3.select(".cam-checkboxes")
 var sortMethods = ["size_u", "model"]
 var form = d3.select(".sort-radiobuttons").append("form");
 
+form.selectAll("label")
+    .data(sortMethods)
+    .enter()
+    .append("label")
+    .text((d) => d)
+    .append("input")
+    .attr("type", "radio")
+    .attr("name", "sortbutton")
+    .attr("value", (d) => d )
+    .property("checked", false)
+    .on("change", () => update(selectedData.sort(sortCams)))
+    .on("click", () => update(selectedData.sort(sortCams)))
+
+
 window.setLocalCamStorage = function(){
     localStorage.setItem('selectedCams', JSON.stringify(selectedData))
 }
@@ -100,7 +104,7 @@ function getLocalCamStorage() {
     selectedData = cams
     const camIds = cams.map(camId)
     // Not using d3.selectAll.filter, since camIds not available in scope
-    // Presumably, there is a nce way to do it in d3, though?
+    // Presumably, there is a nice way to do it in d3, though?
     camIds.forEach((d) => {
         // Can't just select for #id as d3 fails on periods etc.
         // Check d3 is happy with slashes in id.
@@ -109,49 +113,38 @@ function getLocalCamStorage() {
     return cams 
 }
 
+// These functions are bound directly in html, so add to window when using webpack
 /** Deselect all cams and load from local storage */
 window.loadCams = function() {
     d3.selectAll("input").property("checked", false)
     update()
 }
+/** Deselect all cams and update chart to be empty */
 window.clearCams = function() {
     d3.selectAll("input").property("checked", false)
     selectedData = []
     update(selectedData)
 }
 
-var sortMethod
-var labels = form.selectAll("label")
-    .data(sortMethods)
-    .enter()
-    .append("label")
-    .text((d) => d)
-    .append("input")
-    .attr("type", "radio")
-    .attr("name", "sortbutton")
-    .attr("value", (d) => d )
-    .property("checked", (d) => sortMethod && d === sortMethod )
-    .on("change", () => update(selectedData.sort(sortCams)))
-    .on("click", () => update(selectedData.sort(sortCams)))
-    
 /** Method called by sort, not the sort function itself */
 function sortCams(a,b) {
-    sortMethod = d3.select('input[name="sortbutton"]:checked').node().value
+    const sortMethod = d3.select('input[name="sortbutton"]:checked').node().value || sortMethods[0]
     if (sortMethod === "size_u") {
         return a.size_u - b.size_u
     }
+    // compare make-model, then size
     else if (sortMethod === "model") {
-        if (a.make+a.model < b.make+b.model) {return 1}
-        if (a.make+a.model >  b.make+b.model) {return -1}
-        return 0
+        if (a.make+a.model < b.make+b.model) return 1
+        if (a.make+a.model >  b.make+b.model) return -1
+        return a.size_u - a.size_l
     }
 }
 
-// TODO: don't need this here if initialising  with update() ?
+// setup chart
 var chart = d3.select(".chart")
     .attr("width", containerWidth)
     .attr("height", height )
-    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 chart.append("text")
     .attr("transform", `translate(
@@ -162,10 +155,10 @@ chart.append("text")
     .text("Range (mm)");
 
 chart.append("g")
-    .attr("class", "x axis upper")
+    .attr("class", "x axis upper");
 
 chart.append("g").attr("class", "x axis lower")
-    .attr("transform", `translate(0, ${height})`) 
+    .attr("transform", `translate(0, ${height})`);
 
 
 /**
@@ -185,14 +178,16 @@ function update(data){
     var width = containerWidth - margin.left - margin.right;
     var height = ((data.length +1 )* 20 + margin.top + margin.bottom);
 
-    chart = d3.select(".chart")
-        .attr("width", containerWidth)
+    chart.attr("width", containerWidth)
         .attr("height", height)
         .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
-    x.domain([0, d3.max(data, (d) => d.size_u)])
+    var x = d3.scaleLinear()
+        .domain([0, d3.max(data, (d) => d.size_u)])
         .range([0, width]);
-    x1.domain([0, d3.max(data, (d) => d.size_u)])
+
+    var x1 = d3.scaleLinear()
+        .domain([0, d3.max(data, (d) => d.size_u)])
         .range([0, width]);
 
     var xAxis = d3.axisTop(x)//.ticks()// .tickSizeOuter([0]) // does nothing?
@@ -211,11 +206,11 @@ function update(data){
 
     // To remove first gridline at 0
     // Bit of a hack, splice returns the deleted array, which is used for data binding
-    var gridLines = chart.selectAll("line.horizontalGrid")
+    var gridLines = chart.selectAll("line.verticalGrid")
         .data(x.ticks().splice(1, x.ticks().length), (d) => d);
 
-    gridLines.enter() .append("line")
-        .attr("class", "horizontalGrid")
+    gridLines.enter().append("line")
+        .attr("class", "verticalGrid")
         .attr("fill" , "none")
         // .attr("shape-rendering" , "crispEdges")
         .attr("stroke" , "lightgray")
@@ -240,7 +235,7 @@ function update(data){
         .attr("x", (d) => x(d.size_l))
         .attr("width", (d) => x(d.size_u - d.size_l))
        .append("svg:title")
-            // TODO: add check for empty data and/or do this better
+            // TODO: add check for empty data and/or do this better/prettier tooltips
            .text((d) => {
            return `${d.make} ${d.model} - No. ${d.number}\n
            weight: ${d.weight} g
@@ -250,7 +245,8 @@ function update(data){
     bars.exit().remove();
 
     var labels = chart.selectAll("text.cam-label")
-        .data(data, (d) => d.make+d.model+d.number+"label"); // Wouldn't it have been sensible to put and id in the data
+        .data(data, (d) => d.make+d.model+d.number+"label");
+        // Wouldn't it have been sensible to put an id in the data?
 
     labels.enter().append("text").attr("class", "cam-label")
         .merge(labels)
@@ -262,10 +258,12 @@ function update(data){
     labels.exit().remove();
 }
 
+/**
+ * First, uncheck the selectAll check box since we're picking boxes individually
+ * Could do something more sophisticated like check whether all boxes are ticked but this will do
+ * (Same thing won't work for changeMakeModelSelection, since it is called by changeAllSelection)
+ */
 function changeSelection(datum, isChecked) {
-    // First, uncheck the selectAll check box since we're picking boxes individually
-    // Could do something more sophisticated like check whether all boxes are ticked but this will do
-    // (Same thing won't work for changeMakeModelSelection, since it is called by changeAllSelection)
     d3.select(".selectall-wrapper").select("input").property("checked", false);
     // Now adjust selectedData and update:
     if (isChecked) {
@@ -276,15 +274,17 @@ function changeSelection(datum, isChecked) {
     update(selectedData);
 }
 
+/**
+ * If a makeModel selectAll checkbox is ticked  [ ] -> [X] then:
+ *  - check all boxes for cams of that make & model
+ *  - add all cams that were not previously checked to selectedData
+ * If a makeModel selectAll checkbox is unticked  [X] -> [ ] then:
+ *  - do opposite
+ */
 function changeMakeModelSelection(makeModelClass, parentCheckBox) {
-    // If a makeModel selectAll checkbox is ticked  [ ] -> [X] then:
-    //      * check all boxes for cams of that make & model
-    //      * add all cams that were not previously checked to selectedData
-    // If a makeModel selectAll checkbox is unticked  [X] -> [ ] then:
-    //      do opposite
     d3.selectAll(makeModelClass)
         .each( function(d) {
-            let isChecked = d3.select(this).node().checked;
+            const isChecked = d3.select(this).node().checked;
             if( parentCheckBox.checked && !isChecked) {
                 selectedData.push(d); 
             }
@@ -307,7 +307,7 @@ function changeMakeModelSelection(makeModelClass, parentCheckBox) {
  * i.e remember the selectedData when unselected. Clean this up anyway.
  */
 function changeAllSelection() {
-    var checkbox = {}
+    const checkbox = {}
     checkbox.checked = d3.select(this).node().checked
     // var selectall = {checked: true}
     d3.selectAll(".cam_group")
