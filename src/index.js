@@ -171,16 +171,21 @@ chart.append("g").attr("class", "x axis lower")
 function update(data){
     data = data || getLocalCamStorage() || []
 
+    // space for axis
+    var yPadding = 40;
+    // Might be better if there was actual padding around the chart area,
+    // not chart sitting inside the chart container.
+    var height = ((data.length +1 )* 20 + yPadding);
     // Leave space for labels:
     // (could do something better, like create a hidden element and measure its width?)
     margin.right = (10 + d3.max(data, (d) => (d.model + d.number).length)) * 8;
     var containerWidth = container.node().getBoundingClientRect().width;
     var width = containerWidth - margin.left - margin.right;
-    var height = ((data.length +1 )* 20 + margin.top + margin.bottom);
-
     chart.attr("width", containerWidth)
         .attr("height", height)
         .attr("transform", `translate(${margin.left}, ${margin.top})`)
+
+    container.style("height", height + margin.top + margin.bottom + "px") // style, because div not SVG element
 
     var x = d3.scaleLinear()
         .domain([0, d3.max(data, (d) => d.size_u)])
@@ -196,11 +201,11 @@ function update(data){
     // Don't bother moving axis about when there's no data
     if (data.length > 0) {
         chart.select(".axis-label")
-            .attr("transform", `translate( ${width/2}, ${-10 - margin.top/2})`)
+            .attr("transform", `translate( ${width/2}, ${height - yPadding + 35})`)
 
         chart.select(".x.upper").call(xAxis);
         chart.select(".x.lower").call(xAxisLower)
-        .attr("transform", `translate(0, ${height - 60})`);
+        .attr("transform", `translate(0, ${height - yPadding})`);
     } 
     // else  {} // Could set display: none and then re-enable when data is present
 
@@ -218,7 +223,7 @@ function update(data){
         .attr("stroke-width" , "1px")
     .merge(gridLines)
         .attr("y1" , 0)
-        .attr("y2" , height - 5)
+        .attr("y2" , height - margin.top - margin.bottom)
         .attr("x1" , (d) => x(d) + 0.5) // Don't know why the tick marks get shifted across by 0.5
         .attr("x2" , (d) => x(d) + 0.5);
     gridLines.exit().remove();

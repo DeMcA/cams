@@ -7,6 +7,7 @@
     => decide how to manage zero length array of cams in general
 * Haven't got heights/margins/whatever set up correctly
     => gridlines go below axis, renders different on mobile
+* When served remotely, loadCams may not be available on page load
 
 ## Features
 * Decide on sorting behaviour, really want to require a click? Maybe as an option?
