@@ -7,3 +7,6 @@ en.utf-8.add*
 __pycache__/
 *.py[cod]
 *.so
+node_modules
+.jshintrc
+dist/main.js

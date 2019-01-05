@@ -1,0 +1,41 @@
+.cam_group_label{
+    display: block;
+    padding: 4px 0px 0px 1px;
+}
+
+.cam_label {
+    display: inline;
+}
+
+svg {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sort-radiobuttons {
+    margin-bottom: 20px;
+}
+
+.selectall-checkbox {
+}
+
+.cam-checkboxes {
+    flex-flow: row wrap;
+    display: flex;
+    /* height: 600px; */
+}
+
+.cam-grouping {
+    display: inline-block;
+    flex-wrap: nowrap;
+}
+
+.checkbox-columns {
+    flex-basis: 45%;
+    min-width: 460px;
+    display: inline-block;
+}
+
+.data-buttons {
+    margin-bottom: 12px;
+}
