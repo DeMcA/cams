@@ -1,3 +1,5 @@
+## 2019-01-05
+* Merged into old cams projects. Will not use serverside python but might be worth consolidating data and associated scripts.   
 ## 2018-24-11
 ### Changed
 * Secondary sort on sorting by make/model

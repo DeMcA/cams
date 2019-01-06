@@ -95,8 +95,7 @@ window.setLocalCamStorage = function(){
 /*
  * Get cams from local storage, tick boxes for those cams and update global selectedData.
  *
- * Bid of a dodgey, side-effect-laden function.
- * Also fails to update camGroup select-all box as appropriate.
+ * Does not update camGroup select-all box as appropriate.
  */
 function getLocalCamStorage() { 
     const cams = JSON.parse(localStorage.getItem('selectedCams'));
