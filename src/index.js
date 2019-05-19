@@ -188,11 +188,11 @@ function update(data){
 
     var x = d3.scaleLinear()
         .domain([0, d3.max(data, (d) => d.size_u)])
-        .range([0, width]);
+        .range([10, width]);
 
     var x1 = d3.scaleLinear()
         .domain([0, d3.max(data, (d) => d.size_u)])
-        .range([0, width]);
+        .range([10, width]);
 
     var xAxis = d3.axisTop(x)//.ticks()// .tickSizeOuter([0]) // does nothing?
     var xAxisLower = d3.axisBottom(x1).ticks() // has to be a second axis
@@ -257,7 +257,7 @@ function update(data){
             .text((d) => `${d.model}, No. ${d.number}`)
             .attr("y", (d,i) => { return 20 + i * 20 })
             .attr("x", function(d) {
-                return x(d.size_u) + 5
+                return x(d.size_u) + 15 // axis offset from side of char by 10 now
                 }); 
     labels.exit().remove();
 }
