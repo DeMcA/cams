@@ -30,3 +30,9 @@
 * Could even extend to other gear e.g. nuts
 * Better Styling, add fonts etc.
 * Make more mobile friendly (currently usable but not great).
+* Switch labels from left to right of checkbox
+* Better checkbox layout/responsiveness
+    => Two cloumns for wide and 1 column for narrow is good but need minimum gap when size approaches single column
+    => Single column layout has orphaned checkboxes, even when there's space to have them all on one line
+* Better labels on the sort methods
+    => Will also need to check/refactor code as behaviour/labels are for some reason linked
