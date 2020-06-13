@@ -1,5 +1,21 @@
 import * as d3 from "d3";
-import allcams from "./allcams";
+// import allcams from "./allcams";
+// Things that I'm actually using:
+// select selectAll max axisTop axisBottom
+
+d3.csv("cam_sizes.csv", r => (
+    {
+        make: r.make,
+        model: r.model,
+        number: r.number,
+        colour: r.colour,
+        size_l: +r.size_l,
+        size_u: +r.size_u,
+        head_width: +r.head_width,
+        strength: +r.strength,
+        weight : +r.weight
+    }
+)).then(allcams => {
 
 var margin = { top: 40, right: 50, bottom: 10, left: 120 },
     containerWidth = 1200,
@@ -116,6 +132,7 @@ function getLocalCamStorage() {
         // Check d3 is happy with slashes in id.
         d3.select(`input[id='${d}']`).property("checked", true);
     });
+    console.log(cams)
     return cams;
 }
 
@@ -134,9 +151,8 @@ window.clearCams = function() {
 
 /** Method called by sort, not the sort function itself */
 function sortCams(a, b) {
-    const sortMethod =
-        d3.select('input[name="sortbutton"]:checked').node().value ||
-        sortMethods[0];
+    const sortMethod = d3.select('input[name="sortbutton"]:checked').
+        node().value || sortMethods[0];
     if (sortMethod === "size_u") {
         return a.size_u - b.size_u;
     }
@@ -149,7 +165,7 @@ function sortCams(a, b) {
 }
 
 // setup chart
-var chart = d3
+const chart = d3
     .select(".chart")
     .attr("width", containerWidth)
     .attr("height", height)
@@ -181,6 +197,7 @@ chart
  * Should really break this down.
  */
 function update(data) {
+    debugger
     data = data || getLocalCamStorage() || [];
 
     // space for axis
@@ -359,3 +376,4 @@ function changeAllSelection() {
 
 // Inital load of chart. update() will search in local storage initially
 d3.select(window).on("load", update);
+})
